@@ -1,5 +1,5 @@
 {
-  "bla": {
+  "dev": {
     "awscloudformation": {
       "AuthRoleName": "amplify-hackathonapp-bla-32319-authRole",
       "UnauthRoleArn": "arn:aws:iam::048274276498:role/amplify-hackathonapp-bla-32319-unauthRole",
@@ -73,7 +73,7 @@
       "function": {
         "imageSync": {
           "deploymentBucketName": "amplify-hackathonapp-milan-105502-deployment",
-          "s3Key": "amplify-builds/imageSync-6d6a72504b47536e4a67-build.zip"
+          "s3Key": "amplify-builds/imageSync-55765836773747736550-build.zip"
         }
       },
       "api": {
