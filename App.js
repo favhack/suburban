@@ -1,12 +1,16 @@
-import { createStackNavigator } from '@react-navigation/stack';
-import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from "@react-navigation/stack";
+import { NavigationContainer } from "@react-navigation/native";
 
 
-import LoginPage from "./LoginPage.js"
-import SignUpPage from "./SignUpPage.js"
+import LoginPage from "./LoginPage.js";
+import SignUpPage from "./SignUpPage.js";
 import SignUpConfirmPage from "./SignUpConfirmPage.js"
-import HomePage from "./HomePage.js"
 import SettingsPage from "./SettingsPage.js"
+import HomePage from "./HomePage.js";
+import SettingsPage from "./SettingsPage.js";
+import Tags from "./Tags.js";
+import PlanContainer from "./PlanContainer.js";
+import Struktura from "./Struktura.js";
 
 import { Amplify } from "aws-amplify";
 import amplifyconfig from "./src/amplifyconfiguration.json";
@@ -37,7 +41,6 @@ async function trySignOut() {
 	}
 }
 
-
 const Stack = createStackNavigator();
 
 const App = () => {
@@ -51,6 +54,9 @@ const App = () => {
 				</Stack.Screen>
 				<Stack.Screen name="Home" component={HomePage} />
 				<Stack.Screen name="Settings" component={SettingsPage} />
+				<Stack.Screen name="Tags" component={Tags} />
+				<Stack.Screen name="PlanContainer" component={PlanContainer} />
+				<Stack.Screen name="Struktura" component={Struktura} />
 			</Stack.Navigator>
 		</NavigationContainer>
 	);
@@ -58,4 +64,4 @@ const App = () => {
 
 trySignOut();
 
-export default App
+export default App;
