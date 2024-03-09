@@ -27,5 +27,23 @@
       "providerPlugin": "awscloudformation",
       "service": "S3AndCloudFront"
     }
+  },
+  "parameters": {
+    "AMPLIFY_function_imageSync_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "imageSync"
+        }
+      ]
+    },
+    "AMPLIFY_function_imageSync_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "imageSync"
+        }
+      ]
+    }
   }
 }

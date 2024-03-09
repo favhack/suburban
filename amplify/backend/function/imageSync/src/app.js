@@ -6,14 +6,10 @@ or in the "license" file accompanying this file. This file is distributed on an 
 See the License for the specific language governing permissions and limitations under the License.
 */
 
-
-
-
 const express = require('express')
 const bodyParser = require('body-parser')
 const awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
 
-// declare a new express app
 const app = express()
 app.use(bodyParser.json())
 app.use(awsServerlessExpressMiddleware.eventContext())
@@ -26,6 +22,17 @@ app.use(function(req, res, next) {
 });
 
 app.route('/image')
+    .post((req, res) => {
+        //TODO Only a mock
+        const { fileName, base64Buffer, group } = req.body;
+        if (!fileName || !base64Buffer || typeof group !== 'number') 
+            return res.status(400).json({ message: 'Invalid request body or group is not a number'});
+        return res.status(200).json({
+            message: 'Image uploaded',
+            fileName,
+            group,
+        });
+    })
     .get(function(req, res) {
       res.json({success: 'Image test!', url: req.url, body: req.body})
     });
@@ -47,4 +54,5 @@ app.listen(3000, function() {
     console.log("App started")
 });
 
+  // Add your code here
 module.exports = app

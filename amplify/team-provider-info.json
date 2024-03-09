@@ -19,5 +19,32 @@
         "imageSync": {}
       }
     }
+  },
+  "milan": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-hackathonapp-milan-105502-authRole",
+      "UnauthRoleArn": "arn:aws:iam::048274276498:role/amplify-hackathonapp-milan-105502-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::048274276498:role/amplify-hackathonapp-milan-105502-authRole",
+      "Region": "eu-west-1",
+      "DeploymentBucketName": "amplify-hackathonapp-milan-105502-deployment",
+      "UnauthRoleName": "amplify-hackathonapp-milan-105502-unauthRole",
+      "StackName": "amplify-hackathonapp-milan-105502",
+      "StackId": "arn:aws:cloudformation:eu-west-1:048274276498:stack/amplify-hackathonapp-milan-105502/1a73f1c0-ddfb-11ee-9088-0622ff9e7927",
+      "AmplifyAppId": "d3pr84k6yz5me4"
+    },
+    "categories": {
+      "function": {
+        "imageSync": {
+          "deploymentBucketName": "amplify-hackathonapp-milan-105502-deployment",
+          "s3Key": "amplify-builds/imageSync-72486568332f72465169-build.zip"
+        }
+      },
+      "api": {
+        "backend": {}
+      },
+      "hosting": {
+        "S3AndCloudFront": {}
+      }
+    }
   }
 }
