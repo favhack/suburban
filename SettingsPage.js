@@ -1,7 +1,7 @@
 // HomePage.js
 import { signOut } from "aws-amplify/auth";
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 
 async function trySignOut(navigation) {
 	console.log("Signing out the current user");
@@ -18,6 +18,16 @@ async function trySignOut(navigation) {
 const SettingsPage = ({ navigation }) => {
 	return (
 		<View style={styles.container}>
+			<TouchableOpacity
+				onPress={() => navigation.navigate("Home")}
+				style={styles.BackIconTO}
+			>
+				<Image
+					style={styles.iconBack}
+					source={require("./assets/icons/back-button.png")}
+				/>
+			</TouchableOpacity>
+
 			<TouchableOpacity
 				onPress={() => trySignOut(navigation)}
 			>
@@ -45,6 +55,16 @@ const styles = StyleSheet.create({
 		justifyContent: "center",
 		backgroundColor: "#89AFCE",
 	},
+	BackIconTO: {
+		position: "absolute",
+		top: 50,
+		left: 25,
+	},
+	iconBack: {
+		width: 30,
+		height: 30,
+	},
+
 });
 
 export default SettingsPage;
