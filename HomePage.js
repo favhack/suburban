@@ -16,7 +16,19 @@ const HomePage = ({ navigation }) => {
           />
         </TouchableOpacity>
 
-        <View style={styles.skupinaContainer}></View>
+        <View style={styles.skupinaContainer}>
+          <View style={styles.skupinaDot}></View>
+          <Text style={styles.skupinaTxt}>Skupina 1</Text>
+
+          <TouchableOpacity style={styles.skupinaMenuIconTO}>
+            <Image
+              style={styles.skupinaMenuIcon}
+              source={require("./assets/icons/skupinaMenuIcon.png")}
+            />
+          </TouchableOpacity>
+        </View>
+
+        <View style={styles.plányContainer}></View>
       </View>
     </View>
   );
@@ -61,6 +73,41 @@ const styles = StyleSheet.create({
     width: 180,
     height: 40,
     backgroundColor: "rgba(242, 233, 233, 0.6)",
+    borderRadius: 15,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  skupinaDot: {
+    backgroundColor: "#72BE47",
+    width: 25,
+    height: 25,
+    borderRadius: 100,
+    position: "absolute",
+    left: 10,
+  },
+  skupinaTxt: {
+    fontSize: 16,
+    color: "#000",
+    fontWeight: "bold",
+    position: "absolute",
+    left: 42,
+  },
+  skupinaMenuIconTO: {
+    position: "absolute",
+    right: 10,
+  },
+  skupinaMenuIcon: {
+    width: 11,
+    height: 20,
+  },
+  plányContainer: {
+    width: "100%",
+    height: 200,
+    backgroundColor: "rgba(242, 233, 233, 0.6)",
+    alignItems: "center",
+    justifyContent: "center",
+    position: "absolute",
+    top: 60,
     borderRadius: 15,
   },
 });
