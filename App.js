@@ -13,31 +13,27 @@ import SettingsPage from "./SettingsPage";
 
 import {
   Authenticator,
-  useAuthenticato,
+  useAuthenticator,
   withAuthenticator,
 } from "@aws-amplify/ui-react-native";
+
+import "react-native-url-polyfill/auto";
+import "react-native-get-random-values";
+
+import { AppRegistry } from "react-native";
+import { name as appName } from "./app.json";
+
+import { Amplify } from "aws-amplify";
+import amplifyconfig from "./src/amplifyconfiguration.json";
+
+Amplify.configure(amplifyconfig);
 
 function SignOutButton() {
   const { signOut } = useAuthenticator();
   return <Button title="Sign Out" onPress={signOut} />;
 }
 
-// const Stack = createNativeStackNavigator();
-
 const App = () => {
-  /*     <NavigationContainer>
-      <Stack.Navigator
-        initialRouteName="Login"
-        screenOptions={{
-          headerShown: false,
-        }}
-      >
-        <Stack.Screen name="Login" component={LoginPage} />
-        <Stack.Screen name="Home" component={HomePage} />
-        <Stack.Screen name="SignUp" component={SignUpPage} />
-        <Stack.Screen name="Settings" component={SettingsPage} />
-      </Stack.Navigator>
-    </NavigationContainer> */
   return (
     <Authenticator.Provider>
       <Authenticator>
