@@ -1,1 +1,48 @@
-{}
+{
+  "api": {
+    "backend": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "createSchedule"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "function": {
+    "createSchedule": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "hackathonapp2f3655af": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_hackathonapp2f3655af_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "hackathonapp2f3655af"
+        }
+      ]
+    },
+    "AMPLIFY_function_hackathonapp2f3655af_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "hackathonapp2f3655af"
+        }
+      ]
+    }
+  }
+}

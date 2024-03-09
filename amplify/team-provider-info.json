@@ -11,5 +11,27 @@
       "StackId": "arn:aws:cloudformation:eu-west-1:048274276498:stack/amplify-hackathonapp-dev-01846/378ea600-dda2-11ee-8009-0603794c11f3",
       "AmplifyAppId": "dn8upnlg20zl5"
     }
+  },
+  "bubik": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-hackathonapp-bubik-102312-authRole",
+      "UnauthRoleArn": "arn:aws:iam::048274276498:role/amplify-hackathonapp-bubik-102312-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::048274276498:role/amplify-hackathonapp-bubik-102312-authRole",
+      "Region": "eu-west-1",
+      "DeploymentBucketName": "amplify-hackathonapp-bubik-102312-deployment",
+      "UnauthRoleName": "amplify-hackathonapp-bubik-102312-unauthRole",
+      "StackName": "amplify-hackathonapp-bubik-102312",
+      "StackId": "arn:aws:cloudformation:eu-west-1:048274276498:stack/amplify-hackathonapp-bubik-102312/a98568d0-ddf6-11ee-b527-0a1eb1852fd9",
+      "AmplifyAppId": "d2pv7sx98n5rih"
+    },
+    "categories": {
+      "function": {
+        "hackathonapp2f3655af": {
+          "deploymentBucketName": "amplify-hackathonapp-bubik-102312-deployment",
+          "s3Key": "amplify-builds/hackathonapp2f3655af-4f79456b773930753443-build.zip"
+        },
+        "createSchedule": {}
+      }
+    }
   }
 }

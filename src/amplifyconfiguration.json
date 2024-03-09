@@ -1,3 +1,10 @@
 {
-  "aws_project_region": "eu-west-1"
+  "aws_project_region": "eu-west-1",
+  "aws_cloud_logic_custom": [
+    {
+      "name": "scheduleCreate",
+      "endpoint": "https://83y17gn9he.execute-api.eu-west-1.amazonaws.com/bubik",
+      "region": "eu-west-1"
+    }
+  ]
 }
