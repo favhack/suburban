@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 
 import LoginPage from "./LoginPage.js"
 import SignUpPage from "./SignUpPage.js"
+import SignUpConfirmPage from "./SignUpConfirmPage.js"
 import HomePage from "./HomePage.js"
 import SettingsPage from "./SettingsPage.js"
 
@@ -45,6 +46,9 @@ const App = () => {
 			<Stack.Navigator screenOptions={{ headerShown: false }}>
 				<Stack.Screen name="Login" component={LoginPage} />
 				<Stack.Screen name="SignUp" component={SignUpPage} />
+				<Stack.Screen name="SignUpConfirm" >
+					{(props) => <SignUpConfirmPage {...props} username />}
+				</Stack.Screen>
 				<Stack.Screen name="Home" component={HomePage} />
 				<Stack.Screen name="Settings" component={SettingsPage} />
 			</Stack.Navigator>

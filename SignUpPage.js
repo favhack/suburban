@@ -8,8 +8,52 @@ import {
 	Image,
 } from "react-native";
 
+import { signUp } from 'aws-amplify/auth';
+import { useState } from "react";
+
+
+async function trySingUp(username, password, email, navigation) {
+	try {
+		const { isSignUpComplete, userId, nextStep } = await signUp({
+			username,
+			password,
+			options: {
+				userAttributes: {
+					email,
+				},
+				// optional
+				autoSignIn: false // or SignInOptions e.g { authFlowType: "USER_SRP_AUTH" }
+			}
+		});
+
+		console.log("User ", username, " created with ID ", userId);
+
+		if (isSignUpComplete == true && nextStep == "DONE") {
+			await signIn({
+				username: username,
+				password: password,
+				options: {
+					authFlowType: "USER_PASSWORD_AUTH",
+				},
+			});
+
+			console.log("Signed in: ", username);
+			navigation.navigate("Home");
+			return;
+		}
+
+		navigation.navigate("SignUpConfirm", { username: username });
+	} catch (error) {
+		console.log('Error signing up:', error);
+	}
+}
+
 
 const SignUpPage = ({ navigation }) => {
+	const [username, setUsername] = useState('')
+	const [password, setPassword] = useState('')
+	const [email, setEmail] = useState('')
+
 	return (
 		<View style={styles.container}>
 			<TouchableOpacity
@@ -22,19 +66,14 @@ const SignUpPage = ({ navigation }) => {
 				/>
 			</TouchableOpacity>
 
-			<View style={styles.emailButton}>
-				<TextInput
-					style={styles.loginInput}
-					placeholder={"Email"}
-					autoCapitalize="none"
-				/>
-			</View>
 
 			<View style={styles.usernameButton}>
 				<TextInput
 					style={styles.loginInput}
 					placeholder={"Uživatelské jméno"}
 					autoCapitalize="none"
+					value={username}
+					onChangeText={setUsername}
 				/>
 			</View>
 
@@ -43,11 +82,25 @@ const SignUpPage = ({ navigation }) => {
 					style={styles.loginInput}
 					placeholder={"Heslo"}
 					autoCapitalize="none"
+					value={password}
+					onChangeText={setPassword}
+					secureTextEntry={true}
 				/>
 			</View>
 
+			<View style={styles.emailButton}>
+				<TextInput
+					style={styles.loginInput}
+					placeholder={"Email"}
+					autoCapitalize="none"
+					value={email}
+					onChangeText={setEmail}
+				/>
+			</View>
+
+
 			<TouchableOpacity
-				onPress={() => navigation.navigate("Home")}
+				onPress={() => trySingUp(username, password, email, navigation)}
 				style={styles.loginBtnTO}
 			>
 				<View style={styles.loginBtn}>

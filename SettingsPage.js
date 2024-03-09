@@ -3,7 +3,6 @@ import { signOut } from "aws-amplify/auth";
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 
-
 async function trySignOut(navigation) {
 	console.log("Signing out the current user");
 	try {
