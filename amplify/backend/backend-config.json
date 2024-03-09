@@ -9,6 +9,14 @@
           ],
           "category": "function",
           "resourceName": "imageSync"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "createGroup"
         }
       ],
       "providerPlugin": "awscloudformation",
@@ -42,6 +50,11 @@
     }
   },
   "function": {
+    "createGroup": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
     "imageSync": {
       "build": true,
       "providerPlugin": "awscloudformation",
@@ -52,24 +65,6 @@
     "S3AndCloudFront": {
       "providerPlugin": "awscloudformation",
       "service": "S3AndCloudFront"
-    }
-  },
-  "parameters": {
-    "AMPLIFY_function_imageSync_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "imageSync"
-        }
-      ]
-    },
-    "AMPLIFY_function_imageSync_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "imageSync"
-        }
-      ]
     }
   }
 }

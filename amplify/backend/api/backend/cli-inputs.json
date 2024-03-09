@@ -7,6 +7,20 @@
       "permissions": {
         "setting": "open"
       }
+    },
+    "/group": {
+      "name": "/group",
+      "lambdaFunction": "createGroup",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/group/{groupId}/member": {
+      "name": "/group/{groupId}/member",
+      "lambdaFunction": "createGroup",
+      "permissions": {
+        "setting": "open"
+      }
     }
   }
 }
