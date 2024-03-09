@@ -16,6 +16,8 @@ import { Amplify } from "aws-amplify";
 import amplifyconfig from "./src/amplifyconfiguration.json";
 Amplify.configure(amplifyconfig);
 
+import API_CLIENT from "./API.js"
+
 import { getCurrentUser } from 'aws-amplify/auth';
 
 const Stack = createStackNavigator();
@@ -31,6 +33,9 @@ async function isUserLogged() {
 	}
 	return false;
 }
+
+// API_CLIENT.imgSync();
+API_CLIENT.imgGet(7);
 
 
 // async function trySignOut() {
