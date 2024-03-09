@@ -54,7 +54,9 @@
     "categories": {
       "auth": {
         "hackathonapp0a8fe567": {}
-      }}},
+      }
+    }
+  },
   "milan": {
     "awscloudformation": {
       "AuthRoleName": "amplify-hackathonapp-milan-105502-authRole",
@@ -79,6 +81,9 @@
       },
       "hosting": {
         "S3AndCloudFront": {}
+      },
+      "auth": {
+        "hackathonapp0a8fe567": {}
       }
     }
   }

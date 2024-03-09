@@ -45,10 +45,27 @@ app.route('/image/:imageId')
         res.json({sucess: 'Image not deleted!'});
     });
 
-app.post('/image/sync', function(req, res) {
-  res.json({success: 'Test call!', url: req.url, body: req.body})
+app.post('/image/sync', (req, res) => {
+    const {groupId, fileIds, tags} = req.params;
+    if (!Array.isArray(fileIds) || !Array.isArray(tags))
+        return res.status(400).json({message: 'Invalid body'});
+    res.json({
+        images: [
+            {
+                id: 10,
+                filename: "hello.png",
+                buffer: "BLA",
+                groupId: 1
+            }
+        ],
+        tags: [
+            {
+                id: 5,
+                name: "kocka"
+            }
+        ]
+    });
 });
-
 
 app.listen(3000, function() {
     console.log("App started")
