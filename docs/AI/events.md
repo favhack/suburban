@@ -10,6 +10,7 @@ Responses:
 
 200: {
     url: String 
+    tags: String
 }
 Note: URL je do S3 bucketu
 
