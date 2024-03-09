@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-03-09T08:35:52.116Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="eX62T24NFZtahiUz5xQy" version="24.0.3" type="device">
+<mxfile host="app.diagrams.net" modified="2024-03-09T08:43:19.927Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="g1Q2FVDDWgPsVpA-EJcl" version="24.0.3" type="device">
   <diagram name="Stránka-1" id="Kdng2bBrpUKedUkJqB7N">
     <mxGraphModel dx="1050" dy="530" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
@@ -57,6 +57,14 @@
             <Array as="points">
               <mxPoint x="540" y="240" />
               <mxPoint x="540" y="112" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hYX36JWZFe9LmK4qzKHg-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.875;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="hYX36JWZFe9LmK4qzKHg-6" target="hYX36JWZFe9LmK4qzKHg-5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="810" y="120" />
+              <mxPoint x="810" y="350" />
             </Array>
           </mxGeometry>
         </mxCell>
