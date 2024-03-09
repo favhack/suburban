@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
 	},
 	loginInput: {
 		fontSize: 18,
-		position: "absolute",
+		// position: "absolute",
 		left: 25,
 		height: "100%",
 		width: 300,
@@ -120,6 +120,7 @@ const styles = StyleSheet.create({
 		alignItems: "center",
 		justifyContent: "center",
 		position: "absolute",
+		top: 400,
 		backgroundColor: "#0B7B9A",
 	},
 

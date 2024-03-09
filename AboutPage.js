@@ -1,11 +1,11 @@
-import { TextInput, View } from "react-native";
+import { Text, View } from "react-native";
 
 
 const AboutPage = ({ navigation }) => {
 	return (
 		<View>
-			<TextInput>Autoři: Petr Urban, David Bubik, Jiří Trefil, Milan Horínek, Jan Hereš</TextInput>
-			<TextInput>Copyright @2024</TextInput>
+			<Text>Autoři: Petr Urban, David Bubik, Jiří Trefil, Milan Horínek, Jan Hereš</Text>
+			<Text>Copyright @2024</Text>
 		</View>
 	);
 };
