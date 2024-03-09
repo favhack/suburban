@@ -1,0 +1,11 @@
+{
+  "httpMethod": "POST",
+  "path": "/image/generate",
+  "queryStringParameters": {
+    "limit": "10"
+  },
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": "{\"prompt\":\"Vygeneruj žlutý autobus značky mercedes\"}"
+}

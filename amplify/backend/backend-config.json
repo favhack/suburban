@@ -8,6 +8,14 @@
             "Arn"
           ],
           "category": "function",
+          "resourceName": "imageSync"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
           "resourceName": "createSchedule"
         }
       ],
@@ -15,32 +23,64 @@
       "service": "API Gateway"
     }
   },
+  "auth": {
+    "hackathonapp0a8fe567": {
+      "customAuth": false,
+      "dependsOn": [],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [],
+          "passwordPolicyMinLength": 8
+        },
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito"
+    }
+  },
   "function": {
-    "createSchedule": {
+    "imageSync": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     },
-    "hackathonapp2f3655af": {
+    "createSchedule": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     }
   },
+  "hosting": {
+    "S3AndCloudFront": {
+      "providerPlugin": "awscloudformation",
+      "service": "S3AndCloudFront"
+    }
+  },
   "parameters": {
-    "AMPLIFY_function_hackathonapp2f3655af_deploymentBucketName": {
+    "AMPLIFY_function_imageSync_deploymentBucketName": {
       "usedBy": [
         {
           "category": "function",
-          "resourceName": "hackathonapp2f3655af"
+          "resourceName": "imageSync"
         }
       ]
     },
-    "AMPLIFY_function_hackathonapp2f3655af_s3Key": {
+    "AMPLIFY_function_imageSync_s3Key": {
       "usedBy": [
         {
           "category": "function",
-          "resourceName": "hackathonapp2f3655af"
+          "resourceName": "imageSync"
         }
       ]
     }

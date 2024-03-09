@@ -1,0 +1,10 @@
+{
+  "httpMethod": "DELETE",
+  "path": "/image/11",
+  "queryStringParameters": {
+    "limit": "10"
+  },
+  "headers": {
+    "Content-Type": "application/json"
+  }
+}
