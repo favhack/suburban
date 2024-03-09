@@ -28,7 +28,7 @@ const HomePage = ({ navigation }) => {
           </TouchableOpacity>
         </View>
 
-        <View style={styles.plányContainer}></View>
+        <View style={styles.planyContainer}></View>
       </View>
     </View>
   );
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
     width: 11,
     height: 20,
   },
-  plányContainer: {
+  planyContainer: {
     width: "100%",
     height: 200,
     backgroundColor: "rgba(242, 233, 233, 0.6)",
