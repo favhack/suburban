@@ -2,16 +2,16 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 
-const HomePage = ({ navigation }) => {
+const SettingsPage = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity
         onPress={() => navigation.navigate("Settings")}
-        style={styles.settingsIconTO}
+        style={styles.BackIconTO}
       >
         <Image
-          style={styles.settingsIcon}
-          source={require("./assets/icons/Settings.png")}
+          style={styles.iconBack}
+          source={require("./assets/icons/back-button.png")}
         />
       </TouchableOpacity>
 
@@ -37,15 +37,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "#606060",
   },
-  settingsIconTO: {
-    position: "absolute",
-    top: 50,
-    left: 25,
-  },
-  settingsIcon: {
-    width: 30,
-    height: 30,
-  },
 });
 
-export default HomePage;
+export default SettingsPage;
