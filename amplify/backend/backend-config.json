@@ -1,5 +1,21 @@
 {
   "api": {
+    "hackathonapp": {
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [],
+          "defaultAuthentication": {
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 7
+            },
+            "authenticationType": "API_KEY"
+          }
+        }
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "AppSync"
+    },
     "master": {
       "dependsOn": [
         {
@@ -46,24 +62,6 @@
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
-    }
-  },
-  "parameters": {
-    "AMPLIFY_function_createTagsLambda_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "createTagsLambda"
-        }
-      ]
-    },
-    "AMPLIFY_function_createTagsLambda_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "createTagsLambda"
-        }
-      ]
     }
   }
 }

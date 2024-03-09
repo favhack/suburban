@@ -1,6 +1,6 @@
 import { get, post, del } from 'aws-amplify/api';
 
-const apiNameAws = "backend";
+const apiNameAws = "master";
 console.log("API name: ", apiNameAws);
 
 class Api {
@@ -76,7 +76,7 @@ class Api {
 		try {
 			const restOperation = get({
 				apiName: apiNameAws,
-				path: `/netrefil/image/${imgId}`,
+				path: `/image/${imgId}`,
 			});
 
 			const { body } = await restOperation.response;
