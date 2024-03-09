@@ -67,6 +67,16 @@ app.post('/image/sync', (req, res) => {
     });
 });
 
+app.post((req, res) => {
+    const {prompt} = req.body;
+    if (!prompt)
+        return res.status(400).json({message: 'Invalid body'});
+    res.json({
+        id: 10,
+        buffer: "TEST"
+    });
+})
+
 app.listen(3000, function() {
     console.log("App started")
 });

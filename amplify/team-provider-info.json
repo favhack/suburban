@@ -73,7 +73,7 @@
       "function": {
         "imageSync": {
           "deploymentBucketName": "amplify-hackathonapp-milan-105502-deployment",
-          "s3Key": "amplify-builds/imageSync-72486568332f72465169-build.zip"
+          "s3Key": "amplify-builds/imageSync-6d6a72504b47536e4a67-build.zip"
         }
       },
       "api": {
