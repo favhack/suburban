@@ -82,7 +82,7 @@ const HomePage = ({ navigation }) => {
             </View>
 
             <View style={styles.latestImgsContainer}>
-              <Text style={styles.title}>Nedávno zobrazené</Text>
+              <Text style={styles.title2}>Nedávno zobrazené</Text>
               <FlatList
                 data={images}
                 renderItem={({ item }) => (
@@ -96,6 +96,9 @@ const HomePage = ({ navigation }) => {
                 horizontal
                 showsHorizontalScrollIndicator={false}
               />
+              <TouchableOpacity>
+                <Text style={styles.moreTxt}>Více...</Text>
+              </TouchableOpacity>
             </View>
           </View>
         </View>
@@ -213,12 +216,24 @@ const styles = StyleSheet.create({
   },
   latestImgsContainer: {
     width: "100%",
-    height: 250,
+    height: 175,
     backgroundColor: "rgba(242, 233, 233, 0.6)",
     alignItems: "center",
     position: "relative",
     borderRadius: 15,
     marginBottom: 30,
+  },
+  title2: {
+    fontSize: 20,
+    marginRight: 150,
+    marginTop: 10,
+    marginBottom: 10,
+  },
+  moreTxt: {
+    fontSize: 15,
+    color: "#615E5E",
+    marginBottom: 5,
+    marginLeft: 280,
   },
 });
 
