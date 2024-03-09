@@ -1,0 +1,8 @@
+{
+  "httpMethod": "POST",
+  "path": "/image",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": "{\"fileName\": \"exampleImage.png\",\"base64Buffer\": \"iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==\",\"group\": 10}"
+}
