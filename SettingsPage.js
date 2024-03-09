@@ -1,7 +1,7 @@
 // HomePage.js
 import { signOut } from "aws-amplify/auth";
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
 async function trySignOut(navigation) {
 	console.log("Signing out the current user");
