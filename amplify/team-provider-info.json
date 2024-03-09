@@ -52,19 +52,6 @@
     "categories": {
       "auth": {
         "hackathonapp0a8fe567": {}
-      },
-      "function": {
-        "testLambda": {
-          "deploymentBucketName": "amplify-hackathonapp-master-103807-deployment",
-          "s3Key": "amplify-builds/testLambda-534d634a707771495553-build.zip"
-        },
-        "testLambdaFunc": {
-          "deploymentBucketName": "amplify-hackathonapp-master-103807-deployment",
-          "s3Key": "amplify-builds/testLambdaFunc-534d634a707771495553-build.zip"
-        }
-      },
-      "api": {
-        "api": {}
       }
     }
   }
