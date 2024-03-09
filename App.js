@@ -11,11 +11,19 @@ import LoginPage from "./LoginPage";
 import SignUpPage from "./SignUpPage";
 import SettingsPage from "./SettingsPage";
 
+import { Amplify } from "aws-amplify";
+import { Authenticator, useAuthenticator } from "@aws-amplify/ui-react-native";
+
+function SignOutButton() {
+  const { signOut } = useAuthenticator();
+  return <Button title="Sign Out" onPress={signOut} />;
+}
+
 const Stack = createNativeStackNavigator();
 
 function App() {
   return (
-    <NavigationContainer>
+    /*     <NavigationContainer>
       <Stack.Navigator
         initialRouteName="Login"
         screenOptions={{
@@ -27,7 +35,12 @@ function App() {
         <Stack.Screen name="SignUp" component={SignUpPage} />
         <Stack.Screen name="Settings" component={SettingsPage} />
       </Stack.Navigator>
-    </NavigationContainer>
+    </NavigationContainer> */
+    <Authenticator.Provider>
+      <Authenticator>
+        <SignOutButton />
+      </Authenticator>
+    </Authenticator.Provider>
   );
 }
 
