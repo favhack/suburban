@@ -25,13 +25,7 @@
       "AmplifyAppId": "d3ndrtsmi31y75"
     },
     "categories": {
-      "function": {
-        "testLambdaFunc": {
-          "deploymentBucketName": "amplify-hackathonapp-hackathon-25326-deployment",
-          "s3Key": "amplify-builds/testLambdaFunc-534d634a707771495553-build.zip"
-        },
-        "testLambda": {}
-      },
+      "function": {},
       "auth": {
         "hackathonapp0a8fe567": {}
       }
