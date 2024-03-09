@@ -1,5 +1,20 @@
 {
-  "api": {},
+  "api": {
+    "api": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "testLambda"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
   "auth": {
     "hackathonapp0a8fe567": {
       "customAuth": false,
@@ -27,6 +42,11 @@
     }
   },
   "function": {
+    "testLambda": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
     "testLambdaFunc": {
       "build": true,
       "providerPlugin": "awscloudformation",
@@ -47,6 +67,22 @@
         {
           "category": "function",
           "resourceName": "testLambdaFunc"
+        }
+      ]
+    },
+    "AMPLIFY_function_testLambda_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "testLambda"
+        }
+      ]
+    },
+    "AMPLIFY_function_testLambda_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "testLambda"
         }
       ]
     }
