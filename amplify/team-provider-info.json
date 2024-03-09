@@ -74,7 +74,8 @@
         "imageSync": {
           "deploymentBucketName": "amplify-hackathonapp-milan-105502-deployment",
           "s3Key": "amplify-builds/imageSync-55765836773747736550-build.zip"
-        }
+        },
+        "createSchedule": {}
       },
       "api": {
         "backend": {}
@@ -106,6 +107,40 @@
           "s3Key": "amplify-builds/hackathonapp2f3655af-4f79456b773930753443-build.zip"
         },
         "createSchedule": {}
+      }
+    }
+  },
+  "milandva": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-hackathonapp-milandva-203436-authRole",
+      "UnauthRoleArn": "arn:aws:iam::048274276498:role/amplify-hackathonapp-milandva-203436-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::048274276498:role/amplify-hackathonapp-milandva-203436-authRole",
+      "Region": "eu-west-1",
+      "DeploymentBucketName": "amplify-hackathonapp-milandva-203436-deployment",
+      "UnauthRoleName": "amplify-hackathonapp-milandva-203436-unauthRole",
+      "StackName": "amplify-hackathonapp-milandva-203436",
+      "StackId": "arn:aws:cloudformation:eu-west-1:048274276498:stack/amplify-hackathonapp-milandva-203436/25a93130-de4c-11ee-b74d-0654d0e1428d",
+      "AmplifyAppId": "d3pr84k6yz5me4"
+    },
+    "categories": {
+      "auth": {
+        "hackathonapp0a8fe567": {}
+      },
+      "function": {
+        "createSchedule": {
+          "deploymentBucketName": "amplify-hackathonapp-milandva-203436-deployment",
+          "s3Key": "amplify-builds/createSchedule-6e353734652f785a3579-build.zip"
+        },
+        "imageSync": {
+          "deploymentBucketName": "amplify-hackathonapp-milandva-203436-deployment",
+          "s3Key": "amplify-builds/imageSync-55765836773747736550-build.zip"
+        }
+      },
+      "api": {
+        "backend": {}
+      },
+      "hosting": {
+        "S3AndCloudFront": {}
       }
     }
   }

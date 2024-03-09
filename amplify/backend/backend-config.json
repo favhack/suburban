@@ -50,12 +50,12 @@
     }
   },
   "function": {
-    "imageSync": {
+    "createSchedule": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     },
-    "createSchedule": {
+    "imageSync": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
@@ -68,6 +68,22 @@
     }
   },
   "parameters": {
+    "AMPLIFY_function_createSchedule_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "createSchedule"
+        }
+      ]
+    },
+    "AMPLIFY_function_createSchedule_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "createSchedule"
+        }
+      ]
+    },
     "AMPLIFY_function_imageSync_deploymentBucketName": {
       "usedBy": [
         {

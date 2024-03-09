@@ -3,7 +3,10 @@
   "paths": {
     "/schedule": {
       "name": "/schedule",
-      "lambdaFunction": "createSchedule"
+      "lambdaFunction": "createSchedule",
+      "permissions": {
+        "setting": "open"
+      }
     },
     "/image/{imageId}": {
       "name": "/image/{imageId}",
