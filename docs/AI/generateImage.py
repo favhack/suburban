@@ -10,7 +10,6 @@ import base64
 import uuid
 import logging
 
-
 def lambda_handler(event, context):
     # TODO implement
 
