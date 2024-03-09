@@ -1,6 +1,8 @@
 // HomePage.js
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
+import LinearGradient from 'react-native-linear-gradient';
+import PlanContainer from "./PlanContainer";
 
 const HomePage = ({ navigation }) => {
   return (
@@ -17,6 +19,7 @@ const HomePage = ({ navigation }) => {
         </TouchableOpacity>
 
         <View style={styles.skupinaContainer}>
+          
           <View style={styles.skupinaDot}></View>
           <Text style={styles.skupinaTxt}>Skupina 1</Text>
 
@@ -28,7 +31,13 @@ const HomePage = ({ navigation }) => {
           </TouchableOpacity>
         </View>
 
-        <View style={styles.plányContainer}></View>
+        <View style={styles.plányContainer}>
+
+        <PlanContainer planName={"Skola"}>
+
+        </PlanContainer>
+        
+        </View>
       </View>
     </View>
   );
@@ -109,6 +118,9 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 60,
     borderRadius: 15,
+  },
+  text: {
+
   },
 });
 
