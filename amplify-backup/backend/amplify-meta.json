@@ -1,4 +1,7 @@
 {
+  "providers": {
+    "awscloudformation": {}
+  },
   "api": {
     "backend": {
       "dependsOn": [
@@ -65,40 +68,6 @@
     "S3AndCloudFront": {
       "providerPlugin": "awscloudformation",
       "service": "S3AndCloudFront"
-    }
-  },
-  "parameters": {
-    "AMPLIFY_function_createGroup_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "createGroup"
-        }
-      ]
-    },
-    "AMPLIFY_function_createGroup_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "createGroup"
-        }
-      ]
-    },
-    "AMPLIFY_function_imageSync_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "imageSync"
-        }
-      ]
-    },
-    "AMPLIFY_function_imageSync_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "imageSync"
-        }
-      ]
     }
   }
 }

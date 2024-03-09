@@ -47,12 +47,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "imageSync",
+            "createGroup",
             {
               "Fn::Join": [
                 "",
                 [
-                  "imageSync",
+                  "createGroup",
                   "-",
                   {
                     "Ref": "env"
@@ -89,12 +89,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "hackathonappLambdaRolee7434c12",
+            "hackathonappLambdaRole74b55a0e",
             {
               "Fn::Join": [
                 "",
                 [
-                  "hackathonappLambdaRolee7434c12",
+                  "hackathonappLambdaRole74b55a0e",
                   "-",
                   {
                     "Ref": "env"

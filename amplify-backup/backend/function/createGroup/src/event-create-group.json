@@ -1,0 +1,11 @@
+{
+    "httpMethod": "POST",
+    "path": "/group",
+    "queryStringParameters": {
+      "limit": "10"
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": "{\"ownerId\":1,\"groupName\":\"test_group_trefil\"}"
+  }
