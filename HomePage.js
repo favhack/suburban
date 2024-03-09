@@ -6,12 +6,9 @@ import {
   StyleSheet,
   TouchableOpacity,
   Image,
-  Linking,
   FlatList,
 } from "react-native";
-import LinearGradient from "react-native-linear-gradient";
 import PlanContainer from "./PlanContainer";
-import { Gallery } from "react-grid-gallery";
 
 const images = [
   {

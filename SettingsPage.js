@@ -56,31 +56,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#89AFCE",
   },
-  signOutBtn: {
-    height: 50,
-    width: 300,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#0B7B9A",
-    borderRadius: 40,
-    position: "absolute",
-    bottom: 120,
-  },
-  aboutBtn: {
-    height: 50,
-    width: 300,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#0B7B9A",
-    borderRadius: 40,
-    position: "absolute",
-    bottom: 60,
-  },
-  txt: {
-    fontSize: 16,
-    color: "white",
-    fontWeight: "bold",
-  },
   BackIconTO: {
     position: "absolute",
     top: 50,
@@ -89,6 +64,31 @@ const styles = StyleSheet.create({
   iconBack: {
     width: 30,
     height: 30,
+  },
+  signOutBtn: {
+    width: 300,
+    height: 55,
+    backgroundColor: "#0B7B9A",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 40,
+    position: "absolute",
+    bottom: 135,
+  },
+  aboutBtn: {
+    width: 300,
+    height: 55,
+    backgroundColor: "#0B7B9A",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 40,
+    position: "absolute",
+    bottom: 70,
+  },
+  txt: {
+    fontSize: 18,
+    color: "#fff",
+    fontWeight: "bold",
   },
 });
 
