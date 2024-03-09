@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "paths": {
+    "/image/sync": {
+      "name": "/image/sync",
+      "lambdaFunction": "imageSync",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/image": {
+      "name": "/image",
+      "lambdaFunction": "imageSync",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/image/{imageId}": {
+      "name": "/image/{imageId}",
+      "lambdaFunction": "imageSync",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/image/generate": {
+      "name": "/image/generate",
+      "lambdaFunction": "imageSync",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

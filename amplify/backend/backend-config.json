@@ -1,5 +1,4 @@
 {
-  "api": {},
   "auth": {
     "hackathonapp0a8fe567": {
       "customAuth": false,
@@ -26,5 +25,33 @@
       "service": "Cognito"
     }
   },
-  "function": {}
+  "api": {
+    "backend": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "imageSync"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "function": {
+    "imageSync": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "hosting": {
+    "S3AndCloudFront": {
+      "providerPlugin": "awscloudformation",
+      "service": "S3AndCloudFront"
+    }
+  }
 }

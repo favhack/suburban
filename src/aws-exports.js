@@ -23,7 +23,10 @@ const awsmobile = {
     },
     "aws_cognito_verification_mechanisms": [
         "EMAIL"
-    ]
+    ],
+    "aws_content_delivery_bucket": "hackathonapp-20240309030929-hostingbucket-bla",
+    "aws_content_delivery_bucket_region": "eu-central-1",
+    "aws_content_delivery_url": "https://d14qsvabvpjqem.cloudfront.net"
 };
 
 
