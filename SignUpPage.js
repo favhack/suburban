@@ -8,29 +8,8 @@ import {
 	Image,
 } from "react-native";
 
-import { signIn } from 'aws-amplify/auth';
-
-async function trySignIn(username, password) {
-	console.log("Logging in user: ", username, password)
-	try {
-		await signIn({
-			username: username,
-			password: password,
-			options: {
-				authFlowType: "USER_PASSWORD_AUTH",
-			},
-		});
-		console.log("Signed in: ", username);
-	} catch (error) {
-		console.log("Error signing in:", error.underlyingError);
-	}
-};
-
 
 const SignUpPage = ({ navigation }) => {
-	// const [username, setUsername] = useState(username)
-	// const [password, setPassword] = useState(password)
-
 	return (
 		<View style={styles.container}>
 			<TouchableOpacity

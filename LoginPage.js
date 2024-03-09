@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useState } from "react";
 import {
 	View,
 	Text,
@@ -7,27 +7,71 @@ import {
 	TextInput,
 } from "react-native";
 
+import { signIn } from 'aws-amplify/auth';
+
+async function trySignIn(username, password, navigation) {
+	console.log("Logging in user: ", username)
+	try {
+		await signIn({
+			username: username,
+			password: password,
+			options: {
+				authFlowType: "USER_PASSWORD_AUTH",
+			},
+		});
+		console.log("Signed in: ", username);
+		navigation.navigate("Home")
+	} catch (error) {
+		console.log("Error signing in:", error.underlyingError);
+		//TODO: Toast for 
+	}
+};
+
 
 const LoginPage = ({ navigation }) => {
+	const [username, setUsername] = useState('')
+	const [password, setPassword] = useState('')
+
 	return (
 		<View style={styles.container}>
+			<View style={styles.usernameButton}>
+				<TextInput
+					style={styles.loginInput}
+					placeholder={"Uživatelské jméno"}
+					autoCapitalize="none"
+					value={username}
+					onChangeText={setUsername}
+				/>
+			</View>
+
+			<View style={styles.passwordButton}>
+				<TextInput
+					style={styles.loginInput}
+					placeholder={"Heslo"}
+					autoCapitalize="none"
+					value={password}
+					onChangeText={setPassword}
+				/>
+			</View>
+
+
 			<TouchableOpacity
-				onPress={() => navigation.navigate("Home")}
-				style={styles.loginBtnTO}
+				onPress={() => trySignIn({ username }, { password }, navigation)}
+				style={styles.loginButtonTO}
 			>
-				<View style={styles.loginBtn}>
-					<Text style={styles.loginTxt}>Přihlásit se</Text>
+				<View style={styles.loginButton}>
+					<Text style={styles.loginText}>Přihlásit se</Text>
 				</View>
 			</TouchableOpacity>
 
-			<TouchableOpacity style={styles.forgotPasswTO}>
-				<Text style={styles.forgotPassTxt}>Zapomenuté heslo?</Text>
+			<TouchableOpacity style={styles.forgotPasswordTO}>
+				<Text style={styles.textForgotPassword}>Zapomenuté heslo?</Text>
 			</TouchableOpacity>
 
-			<View style={styles.registraceContainer}>
-				<Text style={styles.registraceTxt1}>Ještě nemáte účet?</Text>
+			<View style={styles.registrationContainer}>
+				<Text style={styles.textAccountNotYet}>Ještě nemáte účet?</Text>
 				<TouchableOpacity onPress={() => navigation.navigate("SignUp")}>
-					<Text style={styles.registraceTxt2}>Zaregistrovat se</Text>
+					<Text style={styles.textRegister}>Zaregistrovat se</Text>
 				</TouchableOpacity>
 			</View>
 		</View>
@@ -41,16 +85,6 @@ const styles = StyleSheet.create({
 		justifyContent: "center",
 		backgroundColor: "#89AFCE",
 	},
-	emailButton: {
-		backgroundColor: "#fff",
-		height: 55,
-		width: 350,
-		alignItems: "center",
-		justifyContent: "center",
-		borderRadius: 40,
-		position: "absolute",
-		top: 300,
-	},
 	loginInput: {
 		fontSize: 18,
 		position: "absolute",
@@ -58,7 +92,7 @@ const styles = StyleSheet.create({
 		height: "100%",
 		width: 300,
 	},
-	hesloButton: {
+	passwordButton: {
 		backgroundColor: "#fff",
 		height: 55,
 		width: 350,
@@ -66,9 +100,9 @@ const styles = StyleSheet.create({
 		justifyContent: "center",
 		borderRadius: 40,
 		position: "absolute",
-		top: 370,
+		top: 320,
 	},
-	loginBtnTO: {
+	loginButtonTO: {
 		borderRadius: 40,
 		height: 55,
 		width: 350,
@@ -77,35 +111,36 @@ const styles = StyleSheet.create({
 		position: "absolute",
 		backgroundColor: "#0B7B9A",
 	},
-	loginBtn: {
+	usernameButton: {
 		height: "100%",
 		width: "100%",
-		alignItems: "center",
-		justifyContent: "center",
+		// alignItems: "center",
+		// justifyContent: "center",
+		top: 300
 	},
-	loginTxt: {
+	loginText: {
 		fontSize: 18,
 		color: "white",
 		fontWeight: "bold",
 	},
-	forgotPasswTO: {
+	forgotPasswordTO: {
 		position: "absolute",
 		top: 460,
 	},
-	forgotPassTxt: {
+	textForgotPassword: {
 		fontSize: 15,
 		color: "#E03B3C",
 	},
-	registraceContainer: {
+	registrationContainer: {
 		position: "absolute",
 		top: 530,
 		left: "5%",
 	},
-	registraceTxt1: {
+	textAccountNotYet: {
 		fontSize: 13,
 		color: "#fff",
 	},
-	registraceTxt2: {
+	textRegister: {
 		fontSize: 16,
 		color: "#E03B3C",
 	},
