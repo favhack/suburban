@@ -1,16 +1,23 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, Switch, TouchableOpacity, Image } from 'react-native';
-import { useNavigation } from '@react-navigation/native'; // Import useNavigation
-import { AntDesign } from '@expo/vector-icons'; // Ensure you have expo installed or use react-native-vector-icons
+import React, { useState } from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Switch,
+  TouchableOpacity,
+  Image,
+} from "react-native";
+import { useNavigation } from "@react-navigation/native"; // Import useNavigation
+import { AntDesign } from "@expo/vector-icons"; // Ensure you have expo installed or use react-native-vector-icons
 
 const Struktura = () => {
   const navigation = useNavigation(); // Initialize the navigation hook
   const [isEnabled, setIsEnabled] = useState(false);
-  const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+  const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
 
   return (
     <View style={styles.container}>
-         <TouchableOpacity
+      <TouchableOpacity
         onPress={() => navigation.navigate("Home")}
         style={styles.BackIconTO}
       >
@@ -20,13 +27,6 @@ const Struktura = () => {
         />
       </TouchableOpacity>
       <View style={styles.groupContainer}>
-        <Switch
-          trackColor={{ false: '#767577', true: '#81b0ff' }}
-          thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
-          ios_backgroundColor="#3e3e3e"
-          onValueChange={toggleSwitch}
-          value={isEnabled}
-        />
         <Text style={styles.groupTitle}>Skupina 1</Text>
         <TouchableOpacity style={styles.addButton}>
           <AntDesign name="plus" size={24} color="black" />
@@ -39,16 +39,16 @@ const Struktura = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#89AFCE', // Adjust the background color as needed
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#89AFCE", // Adjust the background color as needed
+    alignItems: "center",
+    justifyContent: "center",
   },
   groupContainer: {
-    width: '90%',
-    flexDirection: 'row',
-    alignItems: 'center',
+    width: "90%",
+    flexDirection: "row",
+    alignItems: "center",
     padding: 16,
-    backgroundColor: 'white',
+    backgroundColor: "white",
     borderRadius: 25, // Adjust the border radius as needed
     // Add shadows for iOS
     shadowColor: "#000",
@@ -73,14 +73,14 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 60,
     left: 32,
-    width:32,
-    height:32,
+    width: 32,
+    height: 32,
   },
   iconBack: {
     width: 30,
     height: 30,
-    width:32,
-    height:32,
+    width: 32,
+    height: 32,
   },
 });
 
