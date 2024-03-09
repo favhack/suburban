@@ -1,7 +1,7 @@
-import { View, Button, TextInput } from "react-native";
+import { View, StyleSheet } from "react-native";
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
 
-// import "react-native-url-polyfill/auto";
-// import "react-native-get-random-values";
 
 import LoginPage from "./LoginPage.js"
 import HomePage from "./HomePage.js"
@@ -11,28 +11,31 @@ import amplifyconfig from "./src/amplifyconfiguration.json";
 
 Amplify.configure(amplifyconfig);
 
-
-// function SignOutButton() {
-// 	const { signOut } = useAuthenticator();
-// 	return <Button title="Sign Out" onPress={signOut} />;
-// }
-
-async function isUserLoggedIn() {
-	try {
-		await Auth.currentAuthenticatedUser();
-		console.log("User is logged in.")
-		return true;
-	} catch {
-		console.log("User is logged out.")
-		return false;
-	}
+function isUserLoggedIn() {
+	return false;
+	// try {
+	// 	await Auth.currentAuthenticatedUser();
+	// 	console.log("User is logged in.")
+	// 	return true;
+	// } catch {
+	// 	console.log("User is logged out.")
+	// 	return false;
+	// }
 }
+
+
+const Stack = createStackNavigator();
 
 const App = () => {
 	return (
-		<View>
-			{isUserLoggedIn() ? <HomePage></HomePage> : <LoginPage></LoginPage>}
-		</View>
+		<NavigationContainer>
+			<Stack.Navigator screenOptions={{ headerShown: false }}>
+				{isUserLoggedIn() == false ? <Stack.Screen name="Login" component={LoginPage} />
+					: null}
+
+				<Stack.Screen name="Home" component={HomePage} />
+			</Stack.Navigator>
+		</NavigationContainer>
 	);
 };
 
