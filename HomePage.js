@@ -5,18 +5,19 @@ import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 const HomePage = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <TouchableOpacity
-        onPress={() => navigation.navigate("Settings")}
-        style={styles.settingsIconTO}
-      >
-        <Image
-          style={styles.settingsIcon}
-          source={require("./assets/icons/Settings.png")}
-        />
-      </TouchableOpacity>
+      <View style={styles.bigContainer}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("Settings")}
+          style={styles.settingsIconTO}
+        >
+          <Image
+            style={styles.settingsIcon}
+            source={require("./assets/icons/Settings.png")}
+          />
+        </TouchableOpacity>
 
-      <Text style={styles.title}>Welcome to the Home Page</Text>
-      <Text style={styles.subtitle}>This is a basic home page layout.</Text>
+        <View style={styles.skupinaContainer}></View>
+      </View>
     </View>
   );
 };
@@ -39,12 +40,28 @@ const styles = StyleSheet.create({
   },
   settingsIconTO: {
     position: "absolute",
-    top: 50,
-    left: 25,
+    top: 5,
+    left: 10,
   },
   settingsIcon: {
     width: 30,
     height: 30,
+  },
+  bigContainer: {
+    width: 350,
+    height: "100%",
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 100,
+  },
+  skupinaContainer: {
+    position: "absolute",
+    top: 0,
+    right: 0,
+    width: 180,
+    height: 40,
+    backgroundColor: "rgba(242, 233, 233, 0.6)",
+    borderRadius: 15,
   },
 });
 
