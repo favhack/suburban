@@ -5,7 +5,6 @@ import { NavigationContainer } from "@react-navigation/native";
 import LoginPage from "./LoginPage.js";
 import SignUpPage from "./SignUpPage.js";
 import SignUpConfirmPage from "./SignUpConfirmPage.js"
-import SettingsPage from "./SettingsPage.js"
 import HomePage from "./HomePage.js";
 import SettingsPage from "./SettingsPage.js";
 import Tags from "./Tags.js";
