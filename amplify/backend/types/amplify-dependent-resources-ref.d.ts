@@ -1,5 +1,4 @@
 export type AmplifyDependentResourcesAttributes = {
-<<<<<<< HEAD
   "auth": {
     "hackathonapp0a8fe567": {
       "AppClientID": "string",
@@ -9,7 +8,6 @@ export type AmplifyDependentResourcesAttributes = {
       "UserPoolArn": "string",
       "UserPoolId": "string",
       "UserPoolName": "string"
-=======
   "api": {
     "backend": {
       "ApiId": "string",
@@ -26,7 +24,6 @@ export type AmplifyDependentResourcesAttributes = {
       "Region": "string"
     }
   },
->>>>>>> b871089 (Image POST lambda mock)
   "hosting": {
     "S3AndCloudFront": {
       "CloudFrontDistributionID": "string",
