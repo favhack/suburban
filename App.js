@@ -1,46 +1,39 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
-import PlanMenu from "./PlanMenu";
-import Recents from "./Recents";
-import Search from "./Search";
-import Group from "./Group";
-// import { NavigationContainer } from "@react-navigation/native";
-// import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import HomePage from "./HomePage";
-import LoginPage from "./LoginPage";
-import SignUpPage from "./SignUpPage";
-import SettingsPage from "./SettingsPage";
+import { View, Button, TextInput } from "react-native";
 
-import {
-  Authenticator,
-  useAuthenticator,
-  withAuthenticator,
-} from "@aws-amplify/ui-react-native";
+// import "react-native-url-polyfill/auto";
+// import "react-native-get-random-values";
 
-import "react-native-url-polyfill/auto";
-import "react-native-get-random-values";
-
-import { AppRegistry } from "react-native";
-import { name as appName } from "./app.json";
+import LoginPage from "./LoginPage.js"
+import HomePage from "./HomePage.js"
 
 import { Amplify } from "aws-amplify";
 import amplifyconfig from "./src/amplifyconfiguration.json";
 
 Amplify.configure(amplifyconfig);
 
-function SignOutButton() {
-  const { signOut } = useAuthenticator();
-  return <Button title="Sign Out" onPress={signOut} />;
+
+// function SignOutButton() {
+// 	const { signOut } = useAuthenticator();
+// 	return <Button title="Sign Out" onPress={signOut} />;
+// }
+
+async function isUserLoggedIn() {
+	try {
+		await Auth.currentAuthenticatedUser();
+		console.log("User is logged in.")
+		return true;
+	} catch {
+		console.log("User is logged out.")
+		return false;
+	}
 }
 
 const App = () => {
-  return (
-    <Authenticator.Provider>
-      <Authenticator>
-        <SignOutButton />
-      </Authenticator>
-    </Authenticator.Provider>
-  );
+	return (
+		<View>
+			{isUserLoggedIn() ? <HomePage></HomePage> : <LoginPage></LoginPage>}
+		</View>
+	);
 };
 
-export default withAuthenticator(App);
+export default App

@@ -1,5 +1,20 @@
 {
-  "api": {},
+  "api": {
+    "master": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "createTagsLambda"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
   "auth": {
     "hackathonapp0a8fe567": {
       "customAuth": false,
@@ -26,5 +41,29 @@
       "service": "Cognito"
     }
   },
-  "function": {}
+  "function": {
+    "createTagsLambda": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_createTagsLambda_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "createTagsLambda"
+        }
+      ]
+    },
+    "AMPLIFY_function_createTagsLambda_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "createTagsLambda"
+        }
+      ]
+    }
+  }
 }
