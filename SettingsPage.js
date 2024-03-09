@@ -6,7 +6,7 @@ const SettingsPage = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity
-        onPress={() => navigation.navigate("Settings")}
+        onPress={() => navigation.navigate("Home")}
         style={styles.BackIconTO}
       >
         <Image
@@ -36,6 +36,19 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: 16,
     color: "#606060",
+  },
+  BackIconTO: {
+    position: "absolute",
+    top: 60,
+    left: 32,
+    width:32,
+    height:32,
+  },
+  iconBack: {
+    width: 30,
+    height: 30,
+    width:32,
+    height:32,
   },
 });
 

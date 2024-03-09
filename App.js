@@ -10,7 +10,8 @@ import HomePage from "./HomePage";
 import LoginPage from "./LoginPage";
 import SignUpPage from "./SignUpPage";
 import SettingsPage from "./SettingsPage";
-
+import Tags from './Tags';
+import Struktura from "./Struktura";
 const Stack = createNativeStackNavigator();
 
 function App() {
@@ -26,6 +27,9 @@ function App() {
         <Stack.Screen name="Home" component={HomePage} />
         <Stack.Screen name="SignUp" component={SignUpPage} />
         <Stack.Screen name="Settings" component={SettingsPage} />
+        <Stack.Screen name="Tags" component={Tags} />
+        <Stack.Screen name="Struktura" component={Struktura} />
+
       </Stack.Navigator>
     </NavigationContainer>
   );
