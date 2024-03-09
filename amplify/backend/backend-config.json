@@ -26,7 +26,17 @@
   "auth": {
     "hackathonapp0a8fe567": {
       "customAuth": false,
-      "dependsOn": [],
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "hackathonapp0a8fe567PostConfirmation",
+          "triggerProvider": "Cognito"
+        }
+      ],
       "frontendAuthConfig": {
         "mfaConfiguration": "OFF",
         "mfaTypes": [
@@ -51,6 +61,11 @@
   },
   "function": {
     "createSchedule": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "hackathonapp0a8fe567PostConfirmation": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
@@ -81,6 +96,22 @@
         {
           "category": "function",
           "resourceName": "createSchedule"
+        }
+      ]
+    },
+    "AMPLIFY_function_hackathonapp0a8fe567PostConfirmation_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "hackathonapp0a8fe567PostConfirmation"
+        }
+      ]
+    },
+    "AMPLIFY_function_hackathonapp0a8fe567PostConfirmation_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "hackathonapp0a8fe567PostConfirmation"
         }
       ]
     },

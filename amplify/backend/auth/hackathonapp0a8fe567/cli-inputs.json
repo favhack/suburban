@@ -1,8 +1,6 @@
 {
   "version": "1",
   "cognitoConfig": {
-    "identityPoolName": "hackathonapp0a8fe567_identitypool_0a8fe567",
-    "allowUnauthenticatedIdentities": false,
     "resourceNameTruncated": "hackat0a8fe567",
     "userPoolName": "hackathonapp0a8fe567_userpool_0a8fe567",
     "autoVerifiedAttributes": [
@@ -35,12 +33,49 @@
     "userpoolClientSetAttributes": false,
     "sharedId": "0a8fe567",
     "resourceName": "hackathonapp0a8fe567",
-    "authSelections": "identityPoolAndUserPool",
-    "useDefault": "default",
-    "triggers": {},
+    "authSelections": "userPoolOnly",
+    "useDefault": "manual",
+    "triggers": {
+      "PostConfirmation": [
+        "custom"
+      ]
+    },
     "userPoolGroupList": [],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,
-    "useEnabledMfas": true
+    "useEnabledMfas": true,
+    "authRoleArn": {
+      "Fn::GetAtt": [
+        "AuthRole",
+        "Arn"
+      ]
+    },
+    "unauthRoleArn": {
+      "Fn::GetAtt": [
+        "UnauthRole",
+        "Arn"
+      ]
+    },
+    "breakCircularDependency": true,
+    "dependsOn": [
+      {
+        "category": "function",
+        "resourceName": "hackathonapp0a8fe567PostConfirmation",
+        "triggerProvider": "Cognito",
+        "attributes": [
+          "Arn",
+          "Name"
+        ]
+      }
+    ],
+    "userPoolGroups": false,
+    "adminQueries": false,
+    "hostedUI": false,
+    "authProviders": [],
+    "parentStack": {
+      "Ref": "AWS::StackId"
+    },
+    "authTriggerConnections": "[\n  {\n    \"triggerType\": \"PostConfirmation\",\n    \"lambdaFunctionName\": \"hackathonapp0a8fe567PostConfirmation\"\n  }\n]",
+    "permissions": []
   }
 }

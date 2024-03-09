@@ -1,0 +1,17 @@
+{
+  "trigger": true,
+  "modules": [
+    "custom"
+  ],
+  "parentResource": "hackathonapp0a8fe567",
+  "functionName": "hackathonapp0a8fe567PostConfirmation",
+  "resourceName": "hackathonapp0a8fe567PostConfirmation",
+  "parentStack": "auth",
+  "triggerEnvs": "[]",
+  "triggerDir": "C:\\snapshot\\amplify-cli\\build\\node_modules\\@aws-amplify\\amplify-category-auth\\provider-utils\\awscloudformation\\triggers\\PostConfirmation",
+  "triggerTemplate": "PostConfirmation.json.ejs",
+  "triggerEventPath": "PostConfirmation.event.json",
+  "roleName": "hackathonapp0a8fe567PostConfirmation",
+  "skipEdit": true,
+  "lambdaLayers": []
+}

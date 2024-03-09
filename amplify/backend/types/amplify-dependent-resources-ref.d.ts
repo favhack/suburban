@@ -10,8 +10,6 @@ export type AmplifyDependentResourcesAttributes = {
     "hackathonapp0a8fe567": {
       "AppClientID": "string",
       "AppClientIDWeb": "string",
-      "IdentityPoolId": "string",
-      "IdentityPoolName": "string",
       "UserPoolArn": "string",
       "UserPoolId": "string",
       "UserPoolName": "string"
@@ -19,6 +17,13 @@ export type AmplifyDependentResourcesAttributes = {
   },
   "function": {
     "createSchedule": {
+      "Arn": "string",
+      "LambdaExecutionRole": "string",
+      "LambdaExecutionRoleArn": "string",
+      "Name": "string",
+      "Region": "string"
+    },
+    "hackathonapp0a8fe567PostConfirmation": {
       "Arn": "string",
       "LambdaExecutionRole": "string",
       "LambdaExecutionRoleArn": "string",
