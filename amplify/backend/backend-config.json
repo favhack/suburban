@@ -9,14 +9,6 @@
           ],
           "category": "function",
           "resourceName": "imageSync"
-        },
-        {
-          "attributes": [
-            "Name",
-            "Arn"
-          ],
-          "category": "function",
-          "resourceName": "createSchedule"
         }
       ],
       "providerPlugin": "awscloudformation",

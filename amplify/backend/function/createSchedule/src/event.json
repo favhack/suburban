@@ -7,5 +7,5 @@
   "headers": {
     "Content-Type": "application/json"
   },
-  "body": "{\"groupId\":\"0\",\"activity\":\"1,0\" }"
+  "body": "{\"groupId\":\"0\",\"activity\":\"4,7\" }"
 }

@@ -1,4 +1,7 @@
-/*
+/* Amplify Params - DO NOT EDIT
+	ENV
+	REGION
+Amplify Params - DO NOT EDIT *//*
 Copyright 2017 - 2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with the License. A copy of the License is located at
     http://aws.amazon.com/apache2.0/
@@ -41,8 +44,9 @@ const writeClient = new Client({
  **********************/
 
 app.get('/schedule', async function(req, res) {
-  var gId = req.body?.groupId
-  var sId = req.body?.scheduleId
+  console.log(req.params)
+  var gId = req.params?.groupId
+  var sId = req.params?.scheduleId
   if(  !gId && !sId){
     res.status(400).json("Missing mandatory values  id or type")
     console.log("Missing mandatory values  id or type")
@@ -125,7 +129,10 @@ async function validateSchedule(activity){
   await readClient.connect();
   var result =await getImgById(resultString)
   
- 
+  if(!result){
+    readClient.end()
+    return false
+  }
   if(result.rowCount != numbersArray.length){ // !chekId(id)
     readClient.end()
     return false
@@ -140,11 +147,14 @@ async function validateSchedule(activity){
 
 
 async function  getImgById(id){
+  console.log("ID",id)
   try{
-    let result = await readClient.query("SELECT * FROM images WHERE id IN "+id)
+    let result = await readClient.query("SELECT * FROM images WHERE id IN "+id+"")
+    console.log(result)
     return result
   }
   catch(exeption){
+      console.log(exeption)
       return null
   }
 
@@ -152,10 +162,13 @@ async function  getImgById(id){
 
 }
 
+
+
 async function addSchedule(schedule,groupId){
   try{
-    let result = await writeClient.query("INSERT INTO  schedules (group_id, activities) VALUES ("+groupId+",'"+schedule+"')")
-    return true
+    let result = await writeClient.query("INSERT INTO  schedules (group_id, activities) VALUES ($1,$2) RETURNING  id",[groupId,schedule])
+    console.log(result)
+    return result
   }
   catch(exeption){
     return false
@@ -166,12 +179,15 @@ async function addSchedule(schedule,groupId){
 
 async function  getScheduleById(id){
   readClient.connect()
+  
   try{
-    let result = await readClient.query("SELECT * FROM schedules WHERE id="+id)
+    let result = await readClient.query("SELECT * FROM schedules WHERE id=$1",[id])
+    console.log(result)
     readClient.end()
     return result.rows
   }
   catch(exeption){
+    console.log(exeption)
     readClient.end()
     return null
   }
@@ -184,7 +200,7 @@ async function getScheduleByGroup(gId){
   readClient.connect()
   try{
     console.log("IN TRy")
-    let result = await readClient.query("SELECT * FROM schedules WHERE group_id="+gId)
+    let result = await readClient.query("SELECT * FROM schedules WHERE group_id=$1",[gId])
     readClient.end()
     return result.rows
   }

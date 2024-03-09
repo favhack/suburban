@@ -2,10 +2,12 @@
   "httpMethod": "GET",
   "path": "/schedule",
   "queryStringParameters": {
-    "limit": "10"
+    "limit": "10",
+    "scheduleId":"1",
+    "type":"0"
   },
   "headers": {
     "Content-Type": "application/json"
   },
-  "body": "{\"scheduleId\":\"0\",\"type\":\"0\" }"
+  "body": "{\"scheduleId\":\"1\",\"type\":\"0\" }"
 }

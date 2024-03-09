@@ -12,6 +12,5 @@
   "triggerTemplate": "PostConfirmation.json.ejs",
   "triggerEventPath": "PostConfirmation.event.json",
   "roleName": "hackathonapp0a8fe567PostConfirmation",
-  "skipEdit": true,
-  "lambdaLayers": []
+  "skipEdit": true
 }
