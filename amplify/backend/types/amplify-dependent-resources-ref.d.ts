@@ -6,7 +6,23 @@ export type AmplifyDependentResourcesAttributes = {
       "RootUrl": "string"
     }
   },
+  "auth": {
+    "hackathonapp0a8fe567": {
+      "AppClientID": "string",
+      "AppClientIDWeb": "string",
+      "UserPoolArn": "string",
+      "UserPoolId": "string",
+      "UserPoolName": "string"
+    }
+  },
   "function": {
+    "hackathonapp0a8fe567PostConfirmation": {
+      "Arn": "string",
+      "LambdaExecutionRole": "string",
+      "LambdaExecutionRoleArn": "string",
+      "Name": "string",
+      "Region": "string"
+    },
     "imageSync": {
       "Arn": "string",
       "LambdaExecutionRole": "string",

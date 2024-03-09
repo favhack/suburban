@@ -87,10 +87,38 @@
       }
     }
   },
-  "bubik": {
+  "bubika": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-hackathonapp-bubika-204348-authRole",
+      "UnauthRoleArn": "arn:aws:iam::048274276498:role/amplify-hackathonapp-bubika-204348-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::048274276498:role/amplify-hackathonapp-bubika-204348-authRole",
+      "Region": "eu-west-1",
+      "DeploymentBucketName": "amplify-hackathonapp-bubika-204348-deployment",
+      "UnauthRoleName": "amplify-hackathonapp-bubika-204348-unauthRole",
+      "StackName": "amplify-hackathonapp-bubika-204348",
+      "StackId": "arn:aws:cloudformation:eu-west-1:048274276498:stack/amplify-hackathonapp-bubika-204348/cd27a6c0-de4d-11ee-a029-0619f580f21f",
+      "AmplifyAppId": "d3pr84k6yz5me4",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-hackathonapp-bubika-204348-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+    },
     "categories": {
       "auth": {
         "hackathonapp0a8fe567": {}
+      },
+      "function": {
+        "imageSync": {
+          "deploymentBucketName": "amplify-hackathonapp-bubika-204348-deployment",
+          "s3Key": "amplify-builds/imageSync-627a7170345355467974-build.zip"
+        },
+        "hackathonapp0a8fe567PostConfirmation": {
+          "deploymentBucketName": "amplify-hackathonapp-bubika-204348-deployment",
+          "s3Key": "amplify-builds/hackathonapp0a8fe567PostConfirmation-79486469616b724e474d-build.zip"
+        }
+      },
+      "api": {
+        "backend": {}
+      },
+      "hosting": {
+        "S3AndCloudFront": {}
       }
     }
   }

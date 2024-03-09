@@ -18,7 +18,17 @@
   "auth": {
     "hackathonapp0a8fe567": {
       "customAuth": false,
-      "dependsOn": [],
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "hackathonapp0a8fe567PostConfirmation",
+          "triggerProvider": "Cognito"
+        }
+      ],
       "frontendAuthConfig": {
         "mfaConfiguration": "OFF",
         "mfaTypes": [
@@ -42,6 +52,11 @@
     }
   },
   "function": {
+    "hackathonapp0a8fe567PostConfirmation": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
     "imageSync": {
       "build": true,
       "providerPlugin": "awscloudformation",
@@ -52,6 +67,40 @@
     "S3AndCloudFront": {
       "providerPlugin": "awscloudformation",
       "service": "S3AndCloudFront"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_hackathonapp0a8fe567PostConfirmation_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "hackathonapp0a8fe567PostConfirmation"
+        }
+      ]
+    },
+    "AMPLIFY_function_hackathonapp0a8fe567PostConfirmation_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "hackathonapp0a8fe567PostConfirmation"
+        }
+      ]
+    },
+    "AMPLIFY_function_imageSync_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "imageSync"
+        }
+      ]
+    },
+    "AMPLIFY_function_imageSync_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "imageSync"
+        }
+      ]
     }
   }
 }
