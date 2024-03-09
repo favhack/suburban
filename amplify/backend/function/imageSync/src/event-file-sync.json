@@ -1,0 +1,9 @@
+{
+    "httpMethod": "POST",
+    "path": "/image/sync",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": "{\"groupId\":\"10\",\"fileIds\":[],\"tags\":[]}"
+  }
+  

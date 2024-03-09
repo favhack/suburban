@@ -88,24 +88,12 @@
     }
   },
   "trefil": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-hackathonapp-trefil-184253-authRole",
-      "UnauthRoleArn": "arn:aws:iam::048274276498:role/amplify-hackathonapp-trefil-184253-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::048274276498:role/amplify-hackathonapp-trefil-184253-authRole",
-      "Region": "eu-west-1",
-      "DeploymentBucketName": "amplify-hackathonapp-trefil-184253-deployment",
-      "UnauthRoleName": "amplify-hackathonapp-trefil-184253-unauthRole",
-      "StackName": "amplify-hackathonapp-trefil-184253",
-      "StackId": "arn:aws:cloudformation:eu-west-1:048274276498:stack/amplify-hackathonapp-trefil-184253/80e995e0-de3c-11ee-afc3-069395fa528d",
-      "AmplifyAppId": "d2s2x9f44gwmxf"
-    },
     "categories": {
       "auth": {
         "hackathonapp0a8fe567": {}
       },
       "function": {
-        "imageSync": {},
-        "createGroup": {}
+        "imageSync": {}
       }
     }
   }

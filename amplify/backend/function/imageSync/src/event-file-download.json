@@ -1,0 +1,8 @@
+{
+    "httpMethod": "GET",
+    "path": "/image/7",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  
+  }
