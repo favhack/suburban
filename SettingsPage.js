@@ -1,42 +1,51 @@
 // HomePage.js
+import { signOut } from "aws-amplify/auth";
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 
-const SettingsPage = ({ navigation }) => {
-  return (
-    <View style={styles.container}>
-      <TouchableOpacity
-        onPress={() => navigation.navigate("Settings")}
-        style={styles.BackIconTO}
-      >
-        <Image
-          style={styles.iconBack}
-          source={require("./assets/icons/back-button.png")}
-        />
-      </TouchableOpacity>
 
-      <Text style={styles.title}>Welcome to the Home Page</Text>
-      <Text style={styles.subtitle}>This is a basic home page layout.</Text>
-    </View>
-  );
+async function trySignOut(navigation) {
+	console.log("Signing out the current user");
+	try {
+		await signOut();
+		console.log("Signed out.");
+		navigation.navigate("Login");
+	} catch (error) {
+		console.log("Error signing out:", error);
+		//TODO: Toast for errors
+	}
+}
+
+const SettingsPage = ({ navigation }) => {
+	return (
+		<View style={styles.container}>
+			<TouchableOpacity
+				onPress={() => trySignOut(navigation)}
+			>
+				<View>
+					<Text>Odhlásit se</Text>
+				</View>
+			</TouchableOpacity>
+
+			<TouchableOpacity
+				onPress={() => navigation.navigate("About")}
+			>
+				<View>
+					<Text>O aplikaci</Text>
+				</View>
+			</TouchableOpacity>
+
+		</View>
+	);
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#89AFCE",
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: "bold",
-    marginBottom: 8,
-  },
-  subtitle: {
-    fontSize: 16,
-    color: "#606060",
-  },
+	container: {
+		flex: 1,
+		alignItems: "center",
+		justifyContent: "center",
+		backgroundColor: "#89AFCE",
+	},
 });
 
 export default SettingsPage;

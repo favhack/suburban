@@ -10,7 +10,7 @@ import {
 import { signIn } from 'aws-amplify/auth';
 
 async function trySignIn(username, password, navigation) {
-	console.log("Logging in user: ", username)
+	console.log("Logging in user: ", username, " ", password)
 	try {
 		await signIn({
 			username: username,
@@ -20,13 +20,12 @@ async function trySignIn(username, password, navigation) {
 			},
 		});
 		console.log("Signed in: ", username);
-		navigation.navigate("Home")
+		navigation.navigate("Home");
 	} catch (error) {
-		console.log("Error signing in:", error.underlyingError);
-		//TODO: Toast for 
+		console.log("Error signing in: ", error);
+		//TODO: Toast for errors
 	}
 };
-
 
 const LoginPage = ({ navigation }) => {
 	const [username, setUsername] = useState('')
@@ -51,15 +50,15 @@ const LoginPage = ({ navigation }) => {
 					autoCapitalize="none"
 					value={password}
 					onChangeText={setPassword}
+					secureTextEntry={true}
 				/>
 			</View>
 
-
 			<TouchableOpacity
-				onPress={() => trySignIn({ username }, { password }, navigation)}
+				onPress={() => trySignIn(username, password, navigation)}
 				style={styles.loginButtonTO}
 			>
-				<View style={styles.loginButton}>
+				<View>
 					<Text style={styles.loginText}>Přihlásit se</Text>
 				</View>
 			</TouchableOpacity>
@@ -92,6 +91,17 @@ const styles = StyleSheet.create({
 		height: "100%",
 		width: 300,
 	},
+	usernameButton: {
+		backgroundColor: "#fff",
+		height: 55,
+		width: 350,
+		alignItems: "center",
+		justifyContent: "center",
+		borderRadius: 40,
+		position: "absolute",
+		top: 250,
+	},
+
 	passwordButton: {
 		backgroundColor: "#fff",
 		height: 55,
@@ -102,6 +112,7 @@ const styles = StyleSheet.create({
 		position: "absolute",
 		top: 320,
 	},
+
 	loginButtonTO: {
 		borderRadius: 40,
 		height: 55,
@@ -111,18 +122,13 @@ const styles = StyleSheet.create({
 		position: "absolute",
 		backgroundColor: "#0B7B9A",
 	},
-	usernameButton: {
-		height: "100%",
-		width: "100%",
-		// alignItems: "center",
-		// justifyContent: "center",
-		top: 300
-	},
+
 	loginText: {
 		fontSize: 18,
 		color: "white",
 		fontWeight: "bold",
 	},
+
 	forgotPasswordTO: {
 		position: "absolute",
 		top: 460,
