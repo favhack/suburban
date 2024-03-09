@@ -1,4 +1,17 @@
 {
+  "master": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-hackathonapp-master-103807-authRole",
+      "UnauthRoleArn": "arn:aws:iam::048274276498:role/amplify-hackathonapp-master-103807-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::048274276498:role/amplify-hackathonapp-master-103807-authRole",
+      "Region": "eu-west-1",
+      "DeploymentBucketName": "amplify-hackathonapp-master-103807-deployment",
+      "UnauthRoleName": "amplify-hackathonapp-master-103807-unauthRole",
+      "StackName": "amplify-hackathonapp-master-103807",
+      "StackId": "arn:aws:cloudformation:eu-west-1:048274276498:stack/amplify-hackathonapp-master-103807/bd8aeb50-ddf8-11ee-b3e7-06abd7aa1f23",
+      "AmplifyAppId": "d1ausbdyu1wp6o"
+    }
+  },
   "dev": {
     "awscloudformation": {
       "AuthRoleName": "amplify-hackathonapp-dev-01846-authRole",
