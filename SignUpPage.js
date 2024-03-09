@@ -9,6 +9,7 @@ import {
 } from "react-native";
 
 
+
 const SignUpPage = ({ navigation }) => {
 	return (
 		<View style={styles.container}>
