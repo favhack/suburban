@@ -7,6 +7,7 @@ import {
 	TouchableOpacity,
 	Image,
 	FlatList,
+	Touchable,
 } from "react-native";
 import PlanContainer from "./PlanContainer";
 
@@ -18,8 +19,7 @@ function getAllLocalImages() {
 	let i = 0;
 	while (true) {
 		let image = localStorage.getItem(i);
-		console.log(image);
-		console.log(image);
+		// console.log(image);
 		if (image == null) {
 			break;
 		}
@@ -42,7 +42,7 @@ const HomePage = ({ navigation }) => {
 			}
 			window.location.reload();
 		}
-	}, 5000);
+	}, 60 * 1000);
 
 	return (
 		<View style={styles.container}>
@@ -92,7 +92,7 @@ const HomePage = ({ navigation }) => {
 								data={getAllLocalImages()}
 								renderItem={({ item }) => (
 									<Image
-										source={{ uri: item.src }}
+										source={{ uri: "data:image/png;base64," + item }}
 										style={styles.imageStyle}
 										resizeMode="cover"
 									/>
@@ -105,6 +105,15 @@ const HomePage = ({ navigation }) => {
 								<Text style={styles.moreTxt}>Více...</Text>
 							</TouchableOpacity>
 						</View>
+
+						<TouchableOpacity
+							onPress={() => navigation.navigate("Prompt")}
+							style={styles.loginButtonTO}
+						>
+							<View>
+								<Text style={styles.loginText}>Vygenerovat obrázek</Text>
+							</View>
+						</TouchableOpacity>
 					</View>
 				</View>
 			</View>

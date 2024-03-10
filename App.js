@@ -11,6 +11,7 @@ import Tags from "./Tags.js";
 import PlanContainer from "./PlanContainer.js";
 import Struktura from "./Struktura.js";
 import AboutPage from "./AboutPage.js"
+import PromptPage from "./PromptPage.js"
 
 import { Amplify } from "aws-amplify";
 import amplifyconfig from "./src/amplifyconfiguration.json";
@@ -73,6 +74,7 @@ const App = () => {
 				<Stack.Screen name="Tags" component={Tags} />
 				<Stack.Screen name="PlanContainer" component={PlanContainer} />
 				<Stack.Screen name="Struktura" component={Struktura} />
+				<Stack.Screen name="Prompt" component={PromptPage} />
 			</Stack.Navigator>
 		</NavigationContainer>
 	);
