@@ -14,7 +14,7 @@ const AboutPage = ({ navigation }) => {
 				/>
 			</TouchableOpacity>
 
-			<Text>Autoři: Petr Urban, David Bubik, Jiří Trefil, Milan Horínek, Jan Hereš</Text>
+			<Text>Autoři: Hackers #Hackathon 2024</Text>
 			<Text>Copyright @2024</Text>
 		</View>
 	);

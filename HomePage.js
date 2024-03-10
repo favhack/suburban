@@ -53,7 +53,7 @@ const HomePage = ({ navigation }) => {
 			}
 			window.location.reload();
 		}
-	}, 60 * 1000);
+	}, 300 * 1000);
 
 	return (
 		<View style={styles.container}>
@@ -109,7 +109,7 @@ const HomePage = ({ navigation }) => {
 						<View style={styles.plányContainer}>
 							<Text style={styles.title}>Obrázkové struktury</Text>
 							<PlanContainer planName={"Skola"} />
-							<PlanContainer planName={"Tvoje máma"} />
+							<PlanContainer planName={"Kontiš"} />
 							<TouchableOpacity
 								style={styles.addButtonTO}
 								onPress={() => navigation.navigate("Tags")}
