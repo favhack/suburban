@@ -49,14 +49,15 @@ const executeQuery = async function(query){
   return result;
 }
 
-const executeDdbQuery = async function(prompt,userId){
+const executeDdbQuery = async function(prompt,userId,realistic){
     const ddb = new aws.DynamoDB();
     const params = {
         TableName: "DynamoEventHandler-v7evq7zvc5cwxnlpysjasjfmi4-ui",
         Item: {
             userId :{S: `${userId}`},
             prompt: {S:`${prompt}`},
-            timestamp:{S: `${new Date().toISOString()}`}
+            timestamp:{S: `${new Date().toISOString()}`},
+            realistic:{S: `${realistic}`}
         }
 
     }
@@ -158,20 +159,23 @@ app.post('/image/sync', async (req, res) => {
     });
 });
 
-async function generateImage(prompt, userId){
-    console.log("generating image",prompt,userId);
-    await executeDdbQuery(prompt,userId)
+async function generateImage(prompt, userId,realistic){
+    console.log("generating image",prompt,userId,realistic);
+    await executeDdbQuery(prompt,userId,realistic)
     const generateImage = {};
     return generateImage;
 }
 
 
 app.post('/image/generate', async (req, res) =>{
-    const {prompt,userId} = req.body;
+    let {prompt,userId,realistic} = req.body;
     if(!prompt || !userId)
         return res.status(400).json({message: "param {prompt} not provided or param {userId} not provided."});
     console.log("generating image for prompt: "+prompt);
-    const image = await generateImage(prompt,userId);
+    if(!realistic)
+        realistic = "false";
+    const image = await generateImage(prompt,userId,realistic);
+    
     if(!image){
         return res.status(500).json({message: "failed to generate image. Try again later."});
     }

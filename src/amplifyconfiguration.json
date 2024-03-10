@@ -3,14 +3,14 @@
   "aws_cloud_logic_custom": [
     {
       "name": "backend",
-      "endpoint": "https://641w4ja1z0.execute-api.eu-west-1.amazonaws.com/herestri",
+      "endpoint": "https://rwlrcos3l8.execute-api.eu-west-1.amazonaws.com/trefildva",
       "region": "eu-west-1"
     }
   ],
-  "aws_cognito_identity_pool_id": "eu-west-1:ff8ae9a5-2e37-48ec-9af8-bf2f2b1ee20d",
+  "aws_cognito_identity_pool_id": "eu-west-1:ef12d216-f43b-487c-9a46-c4c7e1295b13",
   "aws_cognito_region": "eu-west-1",
-  "aws_user_pools_id": "eu-west-1_fHMyPlcoI",
-  "aws_user_pools_web_client_id": "1uqgbt602fi78o8975gutjdct8",
+  "aws_user_pools_id": "eu-west-1_LhtiJ7xlt",
+  "aws_user_pools_web_client_id": "4033vq470hpc1vn12mjliq744r",
   "oauth": {},
   "aws_cognito_username_attributes": [],
   "aws_cognito_social_providers": [],
@@ -28,7 +28,7 @@
   "aws_cognito_verification_mechanisms": [
     "EMAIL"
   ],
-  "aws_content_delivery_bucket": "hackathonapp-20240309030929-hostingbucket-herestri",
+  "aws_content_delivery_bucket": "hackathonapp-20240309030929-hostingbucket-trefildva",
   "aws_content_delivery_bucket_region": "eu-west-1",
-  "aws_content_delivery_url": "https://d1yo5wzo892tj5.cloudfront.net"
+  "aws_content_delivery_url": "https://d6ajxovbmr6ov.cloudfront.net"
 }

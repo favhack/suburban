@@ -292,7 +292,7 @@
         },
         "imageSync": {
           "deploymentBucketName": "amplify-hackathonapp-trefildva-10254-deployment",
-          "s3Key": "amplify-builds/imageSync-355a386f3634734a3756-build.zip"
+          "s3Key": "amplify-builds/imageSync-6257474655457a6f5a73-build.zip"
         },
         "createSchedule": {
           "deploymentBucketName": "amplify-hackathonapp-trefildva-10254-deployment",
@@ -300,7 +300,7 @@
         },
         "hackathonapp0a8fe567PostConfirmation": {
           "deploymentBucketName": "amplify-hackathonapp-trefildva-10254-deployment",
-          "s3Key": "amplify-builds/hackathonapp0a8fe567PostConfirmation-546d67665554326e4a51-build.zip"
+          "s3Key": "amplify-builds/hackathonapp0a8fe567PostConfirmation-336c6971736d7856672b-build.zip"
         }
       },
       "api": {
