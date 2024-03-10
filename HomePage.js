@@ -12,52 +12,33 @@ import PlanContainer from "./PlanContainer";
 
 import API from "./API.js"
 
-const images = [
-	{
-		src: "https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_b.jpg",
-		width: 320,
-		height: 174,
-		isSelected: true,
-		caption: "After Rain (Jeshu John - designerspics.com)",
-	},
-	{
-		src: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_b.jpg",
-		width: 320,
-		height: 212,
-		tags: [
-			{ value: "Ocean", title: "Ocean" },
-			{ value: "People", title: "People" },
-		],
-		alt: "Boats (Jeshu John - designerspics.com)",
-	},
-	{
-		src: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg",
-		width: 320,
-		height: 212,
-	},
-];
 
-setTimeout(() => {
-	const response = API.imgSync();
-	if (response != null) {
-		for (i in 0..len(response[images])) {
-			const local = localStorage.getItem(i);
-			if (local == null) {
-				localStorage.setItem(i, response[images][i]);
-			}
+function getAllLocalImages() {
+	let images = [];
+	let i = 0;
+	while (true) {
+		let image = localStorage.getItem(i);
+		console.log(image);
+		console.log(image);
+		if (image == null) {
+			break;
 		}
+
+		images[i] = image;
+		i++;
 	}
-})
+
+	return images;
+}
 
 const HomePage = ({ navigation }) => {
-	setInterval(() => {
-		const response = API.imgSync();
+	setInterval(async () => {
+		const response = await API.imgSync();
+		const images = response["images"];
+		console.log(images);
 		if (response != null) {
-			for (i = 0; i < len(response[images]); i++) {
-				const local = localStorage.getItem(i);
-				if (local == null) {
-					localStorage.setItem(i, response[images][i]);
-				}
+			for (i = 0; i < images.length; ++i) {
+				localStorage.setItem(i, images[i].url);
 			}
 			window.location.reload();
 		}
@@ -108,7 +89,7 @@ const HomePage = ({ navigation }) => {
 						<View style={styles.latestImgsContainer}>
 							<Text style={styles.title2}>Nedávno zobrazené</Text>
 							<FlatList
-								data={images}
+								data={getAllLocalImages()}
 								renderItem={({ item }) => (
 									<Image
 										source={{ uri: item.src }}

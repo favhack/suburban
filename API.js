@@ -49,7 +49,6 @@ class Api {
 			const response = await body.json();
 
 			console.log('imgSync succeeded');
-			console.log(response);
 			return response;
 		} catch (e) {
 			console.log('imgSync failed: ', e);
