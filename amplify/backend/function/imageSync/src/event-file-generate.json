@@ -4,6 +4,6 @@
     "headers": {
       "Content-Type": "application/json"
     },
-    "body": "{\"prompt\":\"ahoj tygre.\",\"userId\":\"10\"}"
+    "body": "{\"prompt\":\"Trefil plesknul Petra lososem.\",\"userId\":\"10\",\"groupId\":\"10\",\"realistic\":\"true\"}"
   }
   

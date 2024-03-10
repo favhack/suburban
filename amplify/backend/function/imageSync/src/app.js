@@ -49,7 +49,7 @@ const executeQuery = async function(query){
   return result;
 }
 
-const executeDdbQuery = async function(prompt,userId,realistic,groupId){
+const executeDdbQuery = async function(prompt,userId,realistic,groupId,filename){
     const ddb = new aws.DynamoDB();
     const params = {
         TableName: "DynamoEventHandler-v7evq7zvc5cwxnlpysjasjfmi4-ui",
@@ -58,13 +58,14 @@ const executeDdbQuery = async function(prompt,userId,realistic,groupId){
             prompt: {S:`${prompt}`},
             timestamp:{S: `${new Date().toISOString()}`},
             realistic:{S: `${realistic}`},
-            groupId: {S: `${groupId}`}
-
+            groupId: {S: `${groupId}`},
+            filename: {S: `${filename}`}
         }
 
     }
     console.log("putting item",params);
     const res = await ddb.putItem(params).promise();
+
     return res;
 
 }
@@ -152,34 +153,52 @@ app.post('/image/sync', async (req, res) => {
     console.log("FETCHING IMAGES AND TAGS");
     const missingTags = await getMissingTags(tags);
     let missingImages = await getMissingImages(fileIds, groupId);
+    console.log(missingImages);
     missingImages = await getImages(missingImages);
-    console.log("MISSING IMAGES ",missingImages);
-    console.log("MISSING TAGS",missingTags);
     res.status(200).json({
         images: missingImages,
         tags: missingTags
     });
 });
-
-async function generateImage(prompt, userId,realistic,groupId){
+function makeid(length) {
+    let result = '';
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const charactersLength = characters.length;
+    let counter = 0;
+    while (counter < length) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+      counter += 1;
+    }
+    return result;
+}
+function generateAiImageFname (){
+    return "AI_IMAGE"+makeid(10);
+}
+async function generateImage(prompt, userId,realistic,groupId,filename){
     console.log("generating image",prompt,userId,realistic);
-    return await executeDdbQuery(prompt,userId,realistic,groupId)
+    return await executeDdbQuery(prompt,userId,realistic,groupId,filename)
 }
 
 
 app.post('/image/generate', async (req, res) =>{
     let {prompt,userId,realistic,groupId} = req.body;
+    let filename = generateAiImageFname();
     if(!prompt || !userId || !groupId)
         return res.status(400).json({message: "param {prompt} not provided or param {userId} not provided or param {groupId} not provided."});
     console.log("generating image for prompt: "+prompt);
     if(!realistic)
         realistic = "false";
-    const image = await generateImage(prompt,userId,realistic,groupId);
+    const image = await generateImage(prompt,userId,realistic,groupId,filename);
     
     if(!image){
         return res.status(500).json({message: "failed to generate image. Try again later."});
     }
-    return res.status(200).json({message:"generate request added to the queue."});
+    console.log("inserting metadata");
+    filename = `${filename}.png`;
+    await insertImgMetadata("/tmp/"+filename,filename,groupId);
+    console.log("metadata inserted");
+    
+    return res.status(200).json({message:"generate request added to the queue.",filename:filename});
 
 
 });
@@ -204,6 +223,7 @@ async function getImages(uidArray){
     const urls = [];
     for(let i = 0 ; i < uidArray.length; i++){
         const uid = uidArray[i].uid;
+        console.log("fetching file with uid",uid);
         const id = uidArray[i].id;
         const url = await getFileShareUrl(uid);
         //failed to create url, skipping the file
@@ -264,18 +284,7 @@ async function uploadFileToBucket(fileName,base64Buffer){
     return result;
 
 }
-
-
-async function insertImg(fileName,base64Buffer,groupId){
-    console.log("UPLOADING FILE: "+fileName +" TO BUCKET.");
-    const s3Result = await uploadFileToBucket(fileName,base64Buffer);
-    //neni 200 - mohlo spadnout na 413 - payload too large nebo generic server error
-    if(!s3Result){
-        return null;
-    }
-    const fileKey = s3Result.Key;
-    
-    let result = null;
+async function insertImgMetadata(fileKey,fileName,groupId){
     const client = new Client({
         connectionString: writeConnectionString
       });
@@ -297,7 +306,19 @@ async function insertImg(fileName,base64Buffer,groupId){
       } finally {
         client.end();
       }
-    return result;
+      return result;
+}
+
+async function insertImg(fileName,base64Buffer,groupId){
+    console.log("UPLOADING FILE: "+fileName +" TO BUCKET.");
+    const s3Result = await uploadFileToBucket(fileName,base64Buffer);
+    //neni 200 - mohlo spadnout na 413 - payload too large nebo generic server error
+    if(!s3Result){
+        return null;
+    }
+    const fileKey = s3Result.Key;
+    
+    return await insertImgMetadata(fileKey,fileName,groupId);
 
 }
 
