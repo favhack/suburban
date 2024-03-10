@@ -49,6 +49,14 @@ const executeQuery = async function(query){
   return result;
 }
 
+const executeDdbQuery = async function(prompt){
+    const ddb = new aws.DynamoDB();
+    const params = {
+        TableName: "imageProcessing",
+
+    }
+}
+
 /** DB DRIVER THINGIES OVER  */
 
 const app = express()
@@ -138,7 +146,26 @@ app.post('/image/sync', async (req, res) => {
     });
 });
 
+async function generateImage(prompt){
+    const requestBody = {prompt};
+    const generateImage = {} //TODO provolat api pro vygenerovani
+    return generateImage;
+}
 
+
+app.post('/image/generate', async (req, res) =>{
+    const {prompt} = req.body;
+    if(!prompt)
+        return res.status(400).json({message: "param {prompt} not provided"});
+    console.log("generating image for prompt: "+prompt);
+    const image = await generateImage(prompt);
+    if(!image){
+        return res.status(500).json({message: "failed to generate image. Try again later."});
+    }
+    return res.status(201).json({image});
+
+
+});
 
 async function getMissingTags(tagArray){
     const formattedString = tagArray.length >0?` WHERE id NOT IN (${tagArray.join(', ')})`:"";
