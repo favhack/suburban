@@ -93,14 +93,19 @@ class Api {
 	}
 
 	// Generace obrázku
-	async imgGenerate(prompt) {
+	async imgGenerate(prompt, userId, realistic) {
 		try {
+			console.log(prompt, userId, realistic)
 			const restOperation = post({
 				apiName: apiNameAws,
 				path: '/image/generate',
-				body: JSON.stringify({
-					//prompt
-				})
+				options: {
+					body: {
+						prompt: prompt,
+						userId: `${userId}`,
+						realistic: realistic
+					}
+				}
 			});
 
 			const { body } = await restOperation.response;
