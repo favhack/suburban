@@ -1,6 +1,6 @@
 import { get, post, del } from 'aws-amplify/api';
 
-const apiNameAws = "master";
+const apiNameAws = "backend";
 console.log("API name: ", apiNameAws);
 
 class Api {

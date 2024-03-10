@@ -10,7 +10,7 @@ import {
 import { signIn } from 'aws-amplify/auth';
 
 async function trySignIn(username, password, navigation) {
-	console.log("Logging in user: ", username, " ", password)
+	console.log("Logging in user: ", username)
 	try {
 		await signIn({
 			username: username,
