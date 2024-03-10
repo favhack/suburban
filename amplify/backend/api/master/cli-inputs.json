@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/tags": {
+      "name": "/tags",
+      "lambdaFunction": "createTagsLambda",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

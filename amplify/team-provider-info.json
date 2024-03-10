@@ -1,284 +1,14 @@
 {
-  "netrefil": {
+  "heresdva": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-hackathonapp-netrefil-231138-authRole",
-      "UnauthRoleArn": "arn:aws:iam::048274276498:role/amplify-hackathonapp-netrefil-231138-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::048274276498:role/amplify-hackathonapp-netrefil-231138-authRole",
+      "AuthRoleName": "amplify-hackathonapp-heresdva-03627-authRole",
+      "UnauthRoleArn": "arn:aws:iam::048274276498:role/amplify-hackathonapp-heresdva-03627-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::048274276498:role/amplify-hackathonapp-heresdva-03627-authRole",
       "Region": "eu-west-1",
-      "DeploymentBucketName": "amplify-hackathonapp-netrefil-231138-deployment",
-      "UnauthRoleName": "amplify-hackathonapp-netrefil-231138-unauthRole",
-      "StackName": "amplify-hackathonapp-netrefil-231138",
-      "StackId": "arn:aws:cloudformation:eu-west-1:048274276498:stack/amplify-hackathonapp-netrefil-231138/0194bbf0-de62-11ee-a910-0a73f6566dbf",
-      "AmplifyAppId": "d1ausbdyu1wp6o"
-    },
-    "categories": {
-      "auth": {
-        "hackathonapp0a8fe567": {}
-      },
-      "function": {
-        "createGroup": {
-          "deploymentBucketName": "amplify-hackathonapp-netrefil-231138-deployment",
-          "s3Key": "amplify-builds/createGroup-334e744c4151466c6c48-build.zip"
-        },
-        "imageSync": {
-          "deploymentBucketName": "amplify-hackathonapp-netrefil-231138-deployment",
-          "s3Key": "amplify-builds/imageSync-6b6e5467684c4d73734d-build.zip"
-        }
-      },
-      "api": {
-        "backend": {}
-      },
-      "hosting": {
-        "S3AndCloudFront": {}
-      }
-    }
-  },
-  "heres": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-hackathonapp-heres-104305-authRole",
-      "UnauthRoleArn": "arn:aws:iam::048274276498:role/amplify-hackathonapp-heres-104305-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::048274276498:role/amplify-hackathonapp-heres-104305-authRole",
-      "Region": "eu-west-1",
-      "DeploymentBucketName": "amplify-hackathonapp-heres-104305-deployment",
-      "UnauthRoleName": "amplify-hackathonapp-heres-104305-unauthRole",
-      "StackName": "amplify-hackathonapp-heres-104305",
-      "StackId": "arn:aws:cloudformation:eu-west-1:048274276498:stack/amplify-hackathonapp-heres-104305/70031730-ddf9-11ee-b9a7-0afadfb2ee49",
-      "AmplifyAppId": "d13r3wzwkbq2wu"
-    },
-    "categories": {
-      "auth": {
-        "hackathonapp0a8fe567": {}
-      }
-    }
-  },
-  "dev": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-hackathonapp-bla-32319-authRole",
-      "UnauthRoleArn": "arn:aws:iam::048274276498:role/amplify-hackathonapp-bla-32319-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::048274276498:role/amplify-hackathonapp-bla-32319-authRole",
-      "Region": "eu-central-1",
-      "DeploymentBucketName": "amplify-hackathonapp-bla-32319-deployment",
-      "UnauthRoleName": "amplify-hackathonapp-bla-32319-unauthRole",
-      "StackName": "amplify-hackathonapp-bla-32319",
-      "StackId": "arn:aws:cloudformation:eu-central-1:048274276498:stack/amplify-hackathonapp-bla-32319/ff2b6180-ddbb-11ee-a2f7-06813107afb5",
-      "AmplifyAppId": "dxv38zdj3q9y7"
-    },
-    "categories": {
-      "hosting": {
-        "S3AndCloudFront": {}
-      },
-      "function": {
-        "imageSync": {}
-      }
-    }
-  },
-  "hackathon": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-hackathonapp-hackathon-25326-authRole",
-      "UnauthRoleArn": "arn:aws:iam::048274276498:role/amplify-hackathonapp-hackathon-25326-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::048274276498:role/amplify-hackathonapp-hackathon-25326-authRole",
-      "Region": "eu-west-1",
-      "DeploymentBucketName": "amplify-hackathonapp-hackathon-25326-deployment",
-      "UnauthRoleName": "amplify-hackathonapp-hackathon-25326-unauthRole",
-      "StackName": "amplify-hackathonapp-hackathon-25326",
-      "StackId": "arn:aws:cloudformation:eu-west-1:048274276498:stack/amplify-hackathonapp-hackathon-25326/d3079ff0-ddb7-11ee-9ef7-02620f2e386b",
-      "AmplifyAppId": "d3ndrtsmi31y75"
-    },
-    "categories": {
-      "function": {},
-      "auth": {
-        "hackathonapp0a8fe567": {}
-      }
-    }
-  },
-  "master": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-hackathonapp-master-103807-authRole",
-      "UnauthRoleArn": "arn:aws:iam::048274276498:role/amplify-hackathonapp-master-103807-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::048274276498:role/amplify-hackathonapp-master-103807-authRole",
-      "Region": "eu-west-1",
-      "DeploymentBucketName": "amplify-hackathonapp-master-103807-deployment",
-      "UnauthRoleName": "amplify-hackathonapp-master-103807-unauthRole",
-      "StackName": "amplify-hackathonapp-master-103807",
-      "StackId": "arn:aws:cloudformation:eu-west-1:048274276498:stack/amplify-hackathonapp-master-103807/bd8aeb50-ddf8-11ee-b3e7-06abd7aa1f23",
-      "AmplifyAppId": "d1ausbdyu1wp6o"
-    },
-    "categories": {
-      "auth": {
-        "hackathonapp0a8fe567": {}
-      }
-    }
-  },
-  "milan": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-hackathonapp-milan-105502-authRole",
-      "UnauthRoleArn": "arn:aws:iam::048274276498:role/amplify-hackathonapp-milan-105502-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::048274276498:role/amplify-hackathonapp-milan-105502-authRole",
-      "Region": "eu-west-1",
-      "DeploymentBucketName": "amplify-hackathonapp-milan-105502-deployment",
-      "UnauthRoleName": "amplify-hackathonapp-milan-105502-unauthRole",
-      "StackName": "amplify-hackathonapp-milan-105502",
-      "StackId": "arn:aws:cloudformation:eu-west-1:048274276498:stack/amplify-hackathonapp-milan-105502/1a73f1c0-ddfb-11ee-9088-0622ff9e7927",
-      "AmplifyAppId": "d3pr84k6yz5me4"
-    },
-    "categories": {
-      "function": {
-        "imageSync": {
-          "deploymentBucketName": "amplify-hackathonapp-milan-105502-deployment",
-          "s3Key": "amplify-builds/imageSync-55765836773747736550-build.zip"
-        },
-        "createSchedule": {}
-      },
-      "api": {
-        "backend": {}
-      },
-      "hosting": {
-        "S3AndCloudFront": {}
-      },
-      "auth": {
-        "hackathonapp0a8fe567": {}
-      }
-    }
-  },
-  "milandva": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-hackathonapp-milandva-203436-authRole",
-      "UnauthRoleArn": "arn:aws:iam::048274276498:role/amplify-hackathonapp-milandva-203436-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::048274276498:role/amplify-hackathonapp-milandva-203436-authRole",
-      "Region": "eu-west-1",
-      "DeploymentBucketName": "amplify-hackathonapp-milandva-203436-deployment",
-      "UnauthRoleName": "amplify-hackathonapp-milandva-203436-unauthRole",
-      "StackName": "amplify-hackathonapp-milandva-203436",
-      "StackId": "arn:aws:cloudformation:eu-west-1:048274276498:stack/amplify-hackathonapp-milandva-203436/25a93130-de4c-11ee-b74d-0654d0e1428d",
-      "AmplifyAppId": "d3pr84k6yz5me4",
-      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-hackathonapp-milandva-203436-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
-    },
-    "categories": {
-      "auth": {
-        "hackathonapp0a8fe567": {}
-      },
-      "function": {
-        "createSchedule": {
-          "deploymentBucketName": "amplify-hackathonapp-milandva-203436-deployment",
-          "s3Key": "amplify-builds/createSchedule-6e353734652f785a3579-build.zip"
-        },
-        "imageSync": {
-          "deploymentBucketName": "amplify-hackathonapp-milandva-203436-deployment",
-          "s3Key": "amplify-builds/imageSync-70546d59585168422f79-build.zip"
-        },
-        "hackathonapp0a8fe567PostConfirmation": {
-          "deploymentBucketName": "amplify-hackathonapp-milandva-203436-deployment",
-          "s3Key": "amplify-builds/hackathonapp0a8fe567PostConfirmation-79486469616b724e474d-build.zip"
-        }
-      },
-      "api": {
-        "backend": {}
-      },
-      "hosting": {
-        "S3AndCloudFront": {}
-      }
-    }
-  },
-  "bubika": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-hackathonapp-bubika-204348-authRole",
-      "UnauthRoleArn": "arn:aws:iam::048274276498:role/amplify-hackathonapp-bubika-204348-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::048274276498:role/amplify-hackathonapp-bubika-204348-authRole",
-      "Region": "eu-west-1",
-      "DeploymentBucketName": "amplify-hackathonapp-bubika-204348-deployment",
-      "UnauthRoleName": "amplify-hackathonapp-bubika-204348-unauthRole",
-      "StackName": "amplify-hackathonapp-bubika-204348",
-      "StackId": "arn:aws:cloudformation:eu-west-1:048274276498:stack/amplify-hackathonapp-bubika-204348/cd27a6c0-de4d-11ee-a029-0619f580f21f",
-      "AmplifyAppId": "d3pr84k6yz5me4",
-      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-hackathonapp-bubika-204348-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
-    },
-    "categories": {
-      "auth": {
-        "hackathonapp0a8fe567": {}
-      },
-      "function": {
-        "createSchedule": {
-          "deploymentBucketName": "amplify-hackathonapp-milandva-203436-deployment",
-          "s3Key": "amplify-builds/createSchedule-6e353734652f785a3579-build.zip"
-        },
-        "imageSync": {
-          "deploymentBucketName": "amplify-hackathonapp-bubika-204348-deployment",
-          "s3Key": "amplify-builds/imageSync-627a7170345355467974-build.zip"
-        },
-        "hackathonapp0a8fe567PostConfirmation": {
-          "deploymentBucketName": "amplify-hackathonapp-bubika-204348-deployment",
-          "s3Key": "amplify-builds/hackathonapp0a8fe567PostConfirmation-79486469616b724e474d-build.zip"
-        }
-      },
-      "api": {
-        "backend": {}
-      },
-      "hosting": {
-        "S3AndCloudFront": {}
-      }
-    }
-  },
-  "bubikb": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-hackathonapp-bubikb-01154-authRole",
-      "UnauthRoleArn": "arn:aws:iam::048274276498:role/amplify-hackathonapp-bubikb-01154-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::048274276498:role/amplify-hackathonapp-bubikb-01154-authRole",
-      "Region": "eu-west-1",
-      "DeploymentBucketName": "amplify-hackathonapp-bubikb-01154-deployment",
-      "UnauthRoleName": "amplify-hackathonapp-bubikb-01154-unauthRole",
-      "StackName": "amplify-hackathonapp-bubikb-01154",
-      "StackId": "arn:aws:cloudformation:eu-west-1:048274276498:stack/amplify-hackathonapp-bubikb-01154/6d7ecbf0-de6a-11ee-ac59-064db2bdca05",
-      "AmplifyAppId": "d13r3wzwkbq2wu",
-      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-hackathonapp-bubikb-01154-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
-    },
-    "categories": {
-      "auth": {
-        "hackathonapp0a8fe567": {}
-      },
-      "function": {
-        "createSchedule": {
-          "deploymentBucketName": "amplify-hackathonapp-bubikb-01154-deployment",
-          "s3Key": "amplify-builds/createSchedule-704a5331496e59784a67-build.zip"
-        },
-        "hackathonapp0a8fe567PostConfirmation": {
-          "deploymentBucketName": "amplify-hackathonapp-bubikb-01154-deployment",
-          "s3Key": "amplify-builds/hackathonapp0a8fe567PostConfirmation-79486469616b724e474d-build.zip"
-        },
-        "imageSync": {
-          "deploymentBucketName": "amplify-hackathonapp-bubikb-01154-deployment",
-          "s3Key": "amplify-builds/imageSync-627a7170345355467974-build.zip"
-        }
-      },
-      "api": {
-        "backend": {}
-      },
-      "hosting": {
-        "S3AndCloudFront": {}
-      }
-    }
-  },
-  "trefil": {
-    "categories": {
-      "auth": {
-        "hackathonapp0a8fe567": {}
-      },
-      "function": {
-        "imageSync": {},
-        "createGroup": {}
-      }
-    },
-    "awscloudformation": {}
-  },
-  "trefildva": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-hackathonapp-trefildva-10254-authRole",
-      "UnauthRoleArn": "arn:aws:iam::048274276498:role/amplify-hackathonapp-trefildva-10254-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::048274276498:role/amplify-hackathonapp-trefildva-10254-authRole",
-      "Region": "eu-west-1",
-      "DeploymentBucketName": "amplify-hackathonapp-trefildva-10254-deployment",
-      "UnauthRoleName": "amplify-hackathonapp-trefildva-10254-unauthRole",
-      "StackName": "amplify-hackathonapp-trefildva-10254",
-      "StackId": "arn:aws:cloudformation:eu-west-1:048274276498:stack/amplify-hackathonapp-trefildva-10254/8be7a970-de71-11ee-a353-02908de8eaeb",
+      "DeploymentBucketName": "amplify-hackathonapp-heresdva-03627-deployment",
+      "UnauthRoleName": "amplify-hackathonapp-heresdva-03627-unauthRole",
+      "StackName": "amplify-hackathonapp-heresdva-03627",
+      "StackId": "arn:aws:cloudformation:eu-west-1:048274276498:stack/amplify-hackathonapp-heresdva-03627/da6b2300-de6d-11ee-bf01-0a43b666a971",
       "AmplifyAppId": "d1ausbdyu1wp6o"
     },
     "categories": {
@@ -301,6 +31,49 @@
         "hackathonapp0a8fe567PostConfirmation": {
           "deploymentBucketName": "amplify-hackathonapp-trefildva-10254-deployment",
           "s3Key": "amplify-builds/hackathonapp0a8fe567PostConfirmation-546d67665554326e4a51-build.zip"
+        }
+      },
+      "api": {
+        "backend": {}
+      },
+      "hosting": {
+        "S3AndCloudFront": {},
+        "createTagsLambda": {}
+      }
+    }
+  },
+  "herestri": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-hackathonapp-herestri-12824-authRole",
+      "UnauthRoleArn": "arn:aws:iam::048274276498:role/amplify-hackathonapp-herestri-12824-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::048274276498:role/amplify-hackathonapp-herestri-12824-authRole",
+      "Region": "eu-west-1",
+      "DeploymentBucketName": "amplify-hackathonapp-herestri-12824-deployment",
+      "UnauthRoleName": "amplify-hackathonapp-herestri-12824-unauthRole",
+      "StackName": "amplify-hackathonapp-herestri-12824",
+      "StackId": "arn:aws:cloudformation:eu-west-1:048274276498:stack/amplify-hackathonapp-herestri-12824/1bc8d2f0-de75-11ee-8766-06b81dc83263",
+      "AmplifyAppId": "d1ausbdyu1wp6o"
+    },
+    "categories": {
+      "auth": {
+        "hackathonapp0a8fe567": {}
+      },
+      "function": {
+        "createGroup": {
+          "deploymentBucketName": "amplify-hackathonapp-herestri-12824-deployment",
+          "s3Key": "amplify-builds/createGroup-595136754d4b5158764f-build.zip"
+        },
+        "createSchedule": {
+          "deploymentBucketName": "amplify-hackathonapp-herestri-12824-deployment",
+          "s3Key": "amplify-builds/createSchedule-6e46384361374c4b5836-build.zip"
+        },
+        "hackathonapp0a8fe567PostConfirmation": {
+          "deploymentBucketName": "amplify-hackathonapp-herestri-12824-deployment",
+          "s3Key": "amplify-builds/hackathonapp0a8fe567PostConfirmation-416338503134624e436e-build.zip"
+        },
+        "imageSync": {
+          "deploymentBucketName": "amplify-hackathonapp-herestri-12824-deployment",
+          "s3Key": "amplify-builds/imageSync-6148506a7a575a683154-build.zip"
         }
       },
       "api": {

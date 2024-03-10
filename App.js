@@ -1,46 +1,82 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
-import PlanMenu from "./PlanMenu";
-import Recents from "./Recents";
-import Search from "./Search";
-import Group from "./Group";
-// import { NavigationContainer } from "@react-navigation/native";
-// import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import HomePage from "./HomePage";
-import LoginPage from "./LoginPage";
-import SignUpPage from "./SignUpPage";
-import SettingsPage from "./SettingsPage";
+import { createStackNavigator } from "@react-navigation/stack";
+import { NavigationContainer } from "@react-navigation/native";
 
-import {
-  Authenticator,
-  useAuthenticator,
-  withAuthenticator,
-} from "@aws-amplify/ui-react-native";
 
-import "react-native-url-polyfill/auto";
-import "react-native-get-random-values";
-
-import { AppRegistry } from "react-native";
-import { name as appName } from "./app.json";
+import LoginPage from "./LoginPage.js";
+import SignUpPage from "./SignUpPage.js";
+import SignUpConfirmPage from "./SignUpConfirmPage.js"
+import HomePage from "./HomePage.js";
+import SettingsPage from "./SettingsPage.js";
+import Tags from "./Tags.js";
+import PlanContainer from "./PlanContainer.js";
+import Struktura from "./Struktura.js";
+import AboutPage from "./AboutPage.js"
 
 import { Amplify } from "aws-amplify";
 import amplifyconfig from "./src/amplifyconfiguration.json";
-
 Amplify.configure(amplifyconfig);
 
-function SignOutButton() {
-  const { signOut } = useAuthenticator();
-  return <Button title="Sign Out" onPress={signOut} />;
+import API_CLIENT from "./API.js"
+
+import { getCurrentUser } from 'aws-amplify/auth';
+
+const Stack = createStackNavigator();
+
+async function isUserLogged() {
+	try {
+		const { username, userId, signInDetails } = await getCurrentUser();
+		if (userId != null) {
+			return true;
+		}
+	} catch (error) {
+		console.log("Error: ", error);
+	}
+	return false;
 }
 
+
+// async function trySignOut() {
+// 	console.log("Signing out the current user");
+// 	try {
+// 		await signOut();
+// 		console.log("Signed out.");
+// 	} catch (error) {
+// 		console.log("Error signing out:", error);
+// 		//TODO: Toast for errors
+// 	}
+// }
+
 const App = () => {
-  return (
-    <Authenticator.Provider>
-      <Authenticator>
-        <SignOutButton />
-      </Authenticator>
-    </Authenticator.Provider>
-  );
+	return (
+		<NavigationContainer>
+			<Stack.Navigator screenOptions={{ headerShown: false }}>
+
+				{isUserLogged() == true ?
+					<Stack.Screen name="Login" component={LoginPage} />
+					:
+					<Stack.Screen name="Home" component={HomePage} />
+				}
+
+				{isUserLogged() == true ?
+					<Stack.Screen name="Home" component={HomePage} />
+					:
+					<Stack.Screen name="Login" component={LoginPage} />
+				}
+
+				<Stack.Screen name="SignUp" component={SignUpPage} />
+				<Stack.Screen name="SignUpConfirm" >
+					{(props) => <SignUpConfirmPage {...props} username />}
+				</Stack.Screen>
+
+				<Stack.Screen name="Settings" component={SettingsPage} />
+				<Stack.Screen name="About" component={AboutPage} />
+				<Stack.Screen name="Tags" component={Tags} />
+				<Stack.Screen name="PlanContainer" component={PlanContainer} />
+				<Stack.Screen name="Struktura" component={Struktura} />
+			</Stack.Navigator>
+		</NavigationContainer>
+	);
 };
 
-export default withAuthenticator(App);
+
+export default App;
