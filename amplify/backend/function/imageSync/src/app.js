@@ -54,19 +54,15 @@ const executeDdbQuery = async function(prompt,userId){
     const params = {
         TableName: "DynamoEventHandler-v7evq7zvc5cwxnlpysjasjfmi4-ui",
         Item: {
-            userId :userId,
-            prompt: prompt,
-            timestamp: Date.now()
+            userId :{S: `${userId}`},
+            prompt: {S:`${prompt}`},
+            timestamp:{S: `${new Date().toISOString()}`}
         }
 
     }
-    await ddb.putItem(params,(err,data) => {
-        if (err) {
-            console.log("Error", err);
-          } else {
-            console.log("Success", data);
-          }
-    });
+    console.log("putting item",params);
+    const res = await ddb.putItem(params).promise();
+    console.log(res);
 
 }
 
