@@ -1,0 +1,11 @@
+{
+  "httpMethod": "POST",
+  "path": "/schedule",
+  "queryStringParameters": {
+    "limit": "10"
+  },
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": "{\"groupId\":\"0\",\"activity\":\"4,7\" }"
+}

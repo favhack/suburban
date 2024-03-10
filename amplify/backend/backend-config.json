@@ -55,6 +55,16 @@
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     },
+    "createSchedule": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "hackathonapp0a8fe567PostConfirmation": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
     "imageSync": {
       "build": true,
       "providerPlugin": "awscloudformation",
@@ -81,6 +91,38 @@
         {
           "category": "function",
           "resourceName": "createGroup"
+        }
+      ]
+    },
+    "AMPLIFY_function_createSchedule_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "createSchedule"
+        }
+      ]
+    },
+    "AMPLIFY_function_createSchedule_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "createSchedule"
+        }
+      ]
+    },
+    "AMPLIFY_function_hackathonapp0a8fe567PostConfirmation_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "hackathonapp0a8fe567PostConfirmation"
+        }
+      ]
+    },
+    "AMPLIFY_function_hackathonapp0a8fe567PostConfirmation_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "hackathonapp0a8fe567PostConfirmation"
         }
       ]
     },

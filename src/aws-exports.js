@@ -6,23 +6,34 @@ const awsmobile = {
     "aws_cloud_logic_custom": [
         {
             "name": "backend",
-            "endpoint": "https://u70wkfckfd.execute-api.eu-west-1.amazonaws.com/milan",
+            "endpoint": "https://rwlrcos3l8.execute-api.eu-west-1.amazonaws.com/trefildva",
             "region": "eu-west-1"
         }
     ],
-    "aws_cognito_identity_pool_id": "eu-west-1:e2ee6d0a-a4fe-4ed1-9052-98a4a99083a3",
+    "aws_cognito_identity_pool_id": "eu-west-1:ef12d216-f43b-487c-9a46-c4c7e1295b13",
     "aws_cognito_region": "eu-west-1",
-    "aws_user_pools_id": "eu-west-1_8LlQUlwR9",
-    "aws_user_pools_web_client_id": "5iktqdn76pgdom8bhuc4qvq1of",
+    "aws_user_pools_id": "eu-west-1_LhtiJ7xlt",
+    "aws_user_pools_web_client_id": "4033vq470hpc1vn12mjliq744r",
     "oauth": {},
     "aws_cognito_username_attributes": [],
     "aws_cognito_social_providers": [],
     "aws_cognito_signup_attributes": [
         "EMAIL"
     ],
-    "aws_content_delivery_bucket": "hackathonapp-20240309030929-hostingbucket-milan",
+    "aws_cognito_mfa_configuration": "OFF",
+    "aws_cognito_mfa_types": [
+        "SMS"
+    ],
+    "aws_cognito_password_protection_settings": {
+        "passwordPolicyMinLength": 8,
+        "passwordPolicyCharacters": []
+    },
+    "aws_cognito_verification_mechanisms": [
+        "EMAIL"
+    ],
+    "aws_content_delivery_bucket": "hackathonapp-20240309030929-hostingbucket-trefildva",
     "aws_content_delivery_bucket_region": "eu-west-1",
-    "aws_content_delivery_url": "https://draowj0m1h098.cloudfront.net"
+    "aws_content_delivery_url": "https://d6ajxovbmr6ov.cloudfront.net"
 };
 
 
