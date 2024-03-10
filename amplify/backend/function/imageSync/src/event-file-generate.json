@@ -1,0 +1,9 @@
+{
+    "httpMethod": "POST",
+    "path": "/image/generate",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": "{\"prompt\":\"ahoj tygre.\",\"userId\":\"10\"}"
+  }
+  
