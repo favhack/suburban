@@ -4,6 +4,6 @@
     "headers": {
       "Content-Type": "application/json"
     },
-    "body": "{\"prompt\":\"ahoj tygre.\"}"
+    "body": "{\"prompt\":\"ahoj tygre.\",\"userId\":\"10\"}"
   }
   

@@ -49,12 +49,25 @@ const executeQuery = async function(query){
   return result;
 }
 
-const executeDdbQuery = async function(prompt){
+const executeDdbQuery = async function(prompt,userId){
     const ddb = new aws.DynamoDB();
     const params = {
-        TableName: "imageProcessing",
+        TableName: "DynamoEventHandler-v7evq7zvc5cwxnlpysjasjfmi4-ui",
+        Item: {
+            userId :userId,
+            prompt: prompt,
+            timestamp: Date.now()
+        }
 
     }
+    await ddb.putItem(params,(err,data) => {
+        if (err) {
+            console.log("Error", err);
+          } else {
+            console.log("Success", data);
+          }
+    });
+
 }
 
 /** DB DRIVER THINGIES OVER  */
@@ -68,16 +81,18 @@ const getFileShareUrl = async (fileId) =>{
     const params = {
         Bucket: "generateimages",
         Key: fileId,
-        //5 min ttl
-        Expires: 5 * 600
     }
-    let signedUrl = null;
+    let data = null;
     try{
-        signedUrl = await s3.getSignedUrl("getObject",params);
+        data = await s3.getObject(params).promise();
     }catch(exception){
+        console.log(exception);
         return null;
     }
-    return signedUrl;
+    if(!data.Body){
+        return null;
+    }
+    return data.Body.toString("base64");
 }
 
 // Enable CORS for all methods
@@ -132,6 +147,7 @@ app.route('/image/:imageId')
 
 app.post('/image/sync', async (req, res) => {
     const {groupId, fileIds, tags} = req.body;
+    console.log(req);
     if (!Array.isArray(fileIds) || !Array.isArray(tags))
         return res.status(400).json({message: 'Invalid body'});
     console.log("FETCHING IMAGES AND TAGS");
@@ -146,23 +162,24 @@ app.post('/image/sync', async (req, res) => {
     });
 });
 
-async function generateImage(prompt){
-    const requestBody = {prompt};
-    const generateImage = {} //TODO provolat api pro vygenerovani
+async function generateImage(prompt, userId){
+    console.log("generating image",prompt,userId);
+    await executeDdbQuery(prompt,userId)
+    const generateImage = {};
     return generateImage;
 }
 
 
 app.post('/image/generate', async (req, res) =>{
-    const {prompt} = req.body;
-    if(!prompt)
-        return res.status(400).json({message: "param {prompt} not provided"});
+    const {prompt,userId} = req.body;
+    if(!prompt || !userId)
+        return res.status(400).json({message: "param {prompt} not provided or param {userId} not provided."});
     console.log("generating image for prompt: "+prompt);
-    const image = await generateImage(prompt);
+    const image = await generateImage(prompt,userId);
     if(!image){
         return res.status(500).json({message: "failed to generate image. Try again later."});
     }
-    return res.status(201).json({image});
+    return res.status(200).json({message:"generate request added to the queue."});
 
 
 });
