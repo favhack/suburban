@@ -103,6 +103,7 @@ class Api {
 					body: {
 						prompt: prompt,
 						userId: `${userId}`,
+						groupId: "10",
 						realistic: realistic
 					}
 				}

@@ -1,5 +1,5 @@
 // HomePage.js
-import React from "react";
+import React, { useState } from "react";
 import {
 	View,
 	Text,
@@ -7,11 +7,13 @@ import {
 	TouchableOpacity,
 	Image,
 	FlatList,
-	Touchable,
+	Modal,
+	TouchableHighlight
 } from "react-native";
 import PlanContainer from "./PlanContainer";
 
 import API from "./API.js"
+
 
 
 function getAllLocalImages() {
@@ -31,7 +33,16 @@ function getAllLocalImages() {
 	return images;
 }
 
+
 const HomePage = ({ navigation }) => {
+	const [modalVisible, setModalVisible] = useState(false);
+	const [lastSelectedImage, setImage] = useState('')
+
+	function setLastSelectedImage(image) {
+		setImage(image);
+		setModalVisible(true);
+	}
+
 	setInterval(async () => {
 		const response = await API.imgSync();
 		const images = response["images"];
@@ -72,6 +83,27 @@ const HomePage = ({ navigation }) => {
 					</View>
 				</TouchableOpacity>
 
+				<Modal
+					animationType="none"
+					transparent={false}
+					visible={modalVisible}
+					onRequestClose={() => {
+						console.log('Modal has been closed.');
+						setModalVisible(!modalVisible);
+					}}>
+					<View style={styles.modal}>
+						<Image
+							style={{ width: '60%', height: 800, resizeMode: 'stretch' }}
+							source={{ uri: lastSelectedImage }}
+						/>
+
+						<TouchableHighlight style={styles.touchableButton}
+							onPress={() => { setModalVisible(!modalVisible) }}>
+							<Text style={styles.text}>Close Modal</Text>
+						</TouchableHighlight>
+					</View>
+				</Modal>
+
 				<View style={styles.marginTopContainer}>
 					<View>
 						<View style={styles.plányContainer}>
@@ -87,15 +119,17 @@ const HomePage = ({ navigation }) => {
 						</View>
 
 						<View style={styles.latestImgsContainer}>
-							<Text style={styles.title2}>Nedávno zobrazené</Text>
+							<Text style={styles.title2}>Galerie</Text>
 							<FlatList
 								data={getAllLocalImages()}
 								renderItem={({ item }) => (
-									<Image
-										source={{ uri: "data:image/png;base64," + item }}
-										style={styles.imageStyle}
-										resizeMode="cover"
-									/>
+									< TouchableOpacity onPress={() => setLastSelectedImage("data:image/png;base64," + item)}>
+										<Image
+											source={{ uri: "data:image/png;base64," + item }}
+											style={styles.imageStyle}
+											resizeMode="cover"
+										/>
+									</TouchableOpacity>
 								)}
 								keyExtractor={(item, index) => index.toString()}
 								horizontal
@@ -117,7 +151,7 @@ const HomePage = ({ navigation }) => {
 					</View>
 				</View>
 			</View>
-		</View>
+		</View >
 	);
 };
 
@@ -248,6 +282,26 @@ const styles = StyleSheet.create({
 		color: "#615E5E",
 		marginBottom: 5,
 		marginLeft: 280,
+	},
+
+	modal: {
+		flex: 1,
+		alignItems: 'center',
+		backgroundColor: '#89AFCE',
+		justifyContent: 'center',
+		// padding: 10,
+	},
+	text: {
+		color: '#fff',
+		fontSize: 20,
+		textAlign: 'center',
+	},
+	touchableButton: {
+		width: '70%',
+		padding: 10,
+		backgroundColor: '#f06292',
+		marginBottom: 10,
+		marginTop: 30,
 	},
 });
 

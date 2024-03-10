@@ -10,6 +10,7 @@ const PromptPage = () => {
 	const callFunction = async () => {
 		try {
 			const { username, userId, signInDetails } = await getCurrentUser();
+			// console.log(userId);
 
 			const result = API_CLIENT.imgGenerate(prompt, userId, realistic);
 			console.log("AI result: ", result);
